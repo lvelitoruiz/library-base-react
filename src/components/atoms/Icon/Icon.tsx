@@ -1,28 +1,28 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
-
-export interface IconProps extends React.SVGAttributes<SVGElement> {
-  size?: number;
-  children: React.ReactNode;
-}
+import { IconProps } from './types';
 
 export const Icon: React.FC<IconProps> = ({ 
-  size = 24, 
+  size = 20, 
+  color = 'currentColor',
   children, 
-  className,
-  ...props 
+  className
 }) => {
   return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={cn('inline-block', className)}
-      {...props}
+    <span
+      className={cn(
+        'inline-flex items-center justify-center shrink-0',
+        'transition-colors duration-200',
+        className
+      )}
+      style={{
+        width: size,
+        height: size,
+        color: color
+      }}
+      role="img"
     >
       {children}
-    </svg>
+    </span>
   );
 };
