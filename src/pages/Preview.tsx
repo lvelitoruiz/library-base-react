@@ -821,11 +821,30 @@ const Preview = () => {
           <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
             <h3 className="text-xl font-semibold mb-4 text-foreground">InputGroup</h3>
             <div className="max-w-md space-y-4">
-              <InputGroup prefix={<span>$</span>}>
+              <InputGroup leftAddon={
+                <Icon size={18}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-full h-full">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                  </svg>
+                </Icon>
+              }>
+                <Input placeholder="Search..." />
+              </InputGroup>
+              
+              <InputGroup leftAddon={<span className="font-medium">$</span>}>
                 <Input placeholder="0.00" />
               </InputGroup>
-              <InputGroup suffix={<Button size="sm">Send</Button>}>
+              
+              <InputGroup rightAddon={<Button size="sm">Send</Button>}>
                 <Input placeholder="Enter message..." />
+              </InputGroup>
+              
+              <InputGroup 
+                leftAddon={<span className="font-medium">https://</span>}
+                rightAddon={<span className="text-muted-foreground">.com</span>}
+              >
+                <Input placeholder="yoursite" />
               </InputGroup>
             </div>
           </div>
