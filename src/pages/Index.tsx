@@ -38,17 +38,16 @@ const Index = () => {
             UI Library
           </h1>
         }
-      >
-        <Button variant="ghost" size="sm">
-          Docs
-        </Button>
-        <Button variant="secondary" size="sm">
-          Components
-        </Button>
-        <Button variant="primary" size="sm">
-          Get Started
-        </Button>
-      </Navbar>
+        links={[
+          { label: 'Docs', href: '#docs' },
+          { label: 'Components', href: '#components' },
+        ]}
+        rightContent={
+          <Button variant="primary" size="sm">
+            Get Started
+          </Button>
+        }
+      />
 
       <main className="max-w-4xl mx-auto px-6 py-16">
         <div className="text-center mb-12">
