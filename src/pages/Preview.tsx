@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Heart, Star, Settings, User, Bell, Home } from 'lucide-react';
 import {
   // Atoms
   Button,
@@ -417,14 +418,74 @@ const Preview = () => {
           {/* Icon */}
           <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Icon</h3>
-            <div className="flex items-center gap-4">
-              <Icon size={24}>
-                <path stroke="currentColor" strokeWidth="2" d="M12 2L2 7l10 5 10-5-10-5z" />
-                <path stroke="currentColor" strokeWidth="2" d="M2 17l10 5 10-5M2 12l10 5 10-5" />
-              </Icon>
-              <Icon size={32}>
-                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
-              </Icon>
+            <div className="space-y-6">
+              <div>
+                <p className="text-sm mb-3 text-muted-foreground">Tamaños</p>
+                <div className="flex items-center gap-4">
+                  <Icon size={16}>
+                    <Heart className="w-full h-full" />
+                  </Icon>
+                  <Icon size={20}>
+                    <Star className="w-full h-full" />
+                  </Icon>
+                  <Icon size={24}>
+                    <Settings className="w-full h-full" />
+                  </Icon>
+                  <Icon size={32}>
+                    <User className="w-full h-full" />
+                  </Icon>
+                  <Icon size={40}>
+                    <Bell className="w-full h-full" />
+                  </Icon>
+                </div>
+              </div>
+              
+              <div>
+                <p className="text-sm mb-3 text-muted-foreground">Colores con tokens</p>
+                <div className="flex items-center gap-4">
+                  <Icon color="hsl(var(--primary))">
+                    <Heart className="w-full h-full fill-current" />
+                  </Icon>
+                  <Icon size={24} color="hsl(var(--success))">
+                    <Star className="w-full h-full fill-current" />
+                  </Icon>
+                  <Icon size={24} color="hsl(var(--warning))">
+                    <Settings className="w-full h-full" />
+                  </Icon>
+                  <Icon size={24} color="hsl(var(--danger))">
+                    <Bell className="w-full h-full" />
+                  </Icon>
+                </div>
+              </div>
+              
+              <div>
+                <p className="text-sm mb-3 text-muted-foreground">Con SVG personalizado</p>
+                <div className="flex items-center gap-4">
+                  <Icon size={24}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-full h-full">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 6v6l4 2" />
+                    </svg>
+                  </Icon>
+                  <Icon size={32} color="hsl(var(--primary))">
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+                      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                  </Icon>
+                </div>
+              </div>
+              
+              <div>
+                <p className="text-sm mb-3 text-muted-foreground">Con className personalizado</p>
+                <div className="flex items-center gap-4">
+                  <Icon size={28} className="bg-primary/10 rounded-lg p-1">
+                    <Home className="w-full h-full text-primary" />
+                  </Icon>
+                  <Icon size={28} className="bg-success/10 rounded-full p-1">
+                    <Star className="w-full h-full text-success" />
+                  </Icon>
+                </div>
+              </div>
             </div>
           </div>
 
