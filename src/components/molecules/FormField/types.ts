@@ -1,9 +1,9 @@
-import { InputProps } from '../../atoms/Input/types';
-
-export interface FormFieldProps extends InputProps {
-  label: string;
-  id: string;
-  error?: string;
-  helperText?: string;
+export interface FormFieldProps {
+  label?: string;
   required?: boolean;
+  error?: string;
+  hint?: string;
+  children: React.ReactNode;
+  id?: string;
+  className?: string;
 }

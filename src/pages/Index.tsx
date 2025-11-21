@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button } from '@/components/atoms/Button';
+import { Input } from '@/components/atoms/Input';
 import { FormField } from '@/components/molecules/FormField';
 import { Navbar } from '@/components/organisms/Navbar';
 
@@ -98,25 +99,31 @@ const Index = () => {
             <FormField
               label="Full Name"
               id="name"
-              placeholder="John Doe"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
               required
-              helperText="Enter your full name"
-            />
+              hint="Enter your full name"
+            >
+              <Input
+                placeholder="John Doe"
+                value={name}
+                onChange={setName}
+              />
+            </FormField>
             <FormField
               label="Email Address"
               id="email"
-              type="email"
-              placeholder="john@example.com"
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-                setEmailError('');
-              }}
-              error={emailError}
               required
-            />
+              error={emailError}
+            >
+              <Input
+                type="email"
+                placeholder="john@example.com"
+                value={email}
+                onChange={(value) => {
+                  setEmail(value);
+                  setEmailError('');
+                }}
+              />
+            </FormField>
             <div className="flex gap-3 pt-4">
               <Button 
                 type="submit" 
