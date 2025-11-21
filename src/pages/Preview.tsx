@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Heart, Star, Settings, User, Bell, Home } from 'lucide-react';
+import { Heart, Star, Settings, User, Bell, Home, Info, CheckCircle, AlertTriangle, XCircle } from 'lucide-react';
 import {
   // Atoms
   Button,
@@ -853,10 +853,32 @@ const Preview = () => {
           <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Alert</h3>
             <div className="space-y-4">
-              <Alert variant="info">This is an informational alert message.</Alert>
-              <Alert variant="success">Operation completed successfully!</Alert>
-              <Alert variant="warning">Please review your information.</Alert>
-              <Alert variant="error">An error occurred. Please try again.</Alert>
+              <Alert 
+                variant="info"
+                title="Information"
+                description="This is an informational alert message."
+                icon={<Icon size={20}><Info className="w-full h-full" /></Icon>}
+              />
+              <Alert 
+                variant="success"
+                title="Success"
+                description="Operation completed successfully!"
+                icon={<Icon size={20}><CheckCircle className="w-full h-full" /></Icon>}
+              />
+              <Alert 
+                variant="warning"
+                title="Warning"
+                description="Please review your information."
+                icon={<Icon size={20}><AlertTriangle className="w-full h-full" /></Icon>}
+              />
+              <Alert 
+                variant="danger"
+                title="Error"
+                description="An error occurred. Please try again."
+                icon={<Icon size={20}><XCircle className="w-full h-full" /></Icon>}
+                closable
+                onClose={() => console.log('Alert closed')}
+              />
             </div>
           </div>
 
