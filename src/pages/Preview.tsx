@@ -368,11 +368,49 @@ const Preview = () => {
           {/* Avatar */}
           <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Avatar</h3>
-            <div className="flex items-center gap-4">
-              <Avatar size="sm" alt="John Doe" />
-              <Avatar size="md" alt="Jane Smith" />
-              <Avatar size="lg" alt="Robert Johnson" />
-              <Avatar size="md" src="https://i.pravatar.cc/150?img=1" alt="User" />
+            <div className="space-y-6">
+              <div>
+                <p className="text-sm mb-3 text-muted-foreground">Sizes</p>
+                <div className="flex items-center gap-3">
+                  <Avatar size="sm" fallback="SM" alt="Small Avatar" />
+                  <Avatar size="md" fallback="MD" alt="Medium Avatar" />
+                  <Avatar size="lg" fallback="LG" alt="Large Avatar" />
+                  <Avatar size="xl" fallback="XL" alt="Extra Large Avatar" />
+                </div>
+              </div>
+              <div>
+                <p className="text-sm mb-3 text-muted-foreground">With Images</p>
+                <div className="flex items-center gap-3">
+                  <Avatar size="sm" src="https://i.pravatar.cc/150?img=1" alt="User 1" />
+                  <Avatar size="md" src="https://i.pravatar.cc/150?img=2" alt="User 2" />
+                  <Avatar size="lg" src="https://i.pravatar.cc/150?img=3" alt="User 3" />
+                  <Avatar size="xl" src="https://i.pravatar.cc/150?img=4" alt="User 4" />
+                </div>
+              </div>
+              <div>
+                <p className="text-sm mb-3 text-muted-foreground">With Fallback Initials</p>
+                <div className="flex items-center gap-3">
+                  <Avatar size="sm" fallback="JD" alt="John Doe" />
+                  <Avatar size="md" fallback="JS" alt="Jane Smith" />
+                  <Avatar size="lg" fallback="RJ" alt="Robert Johnson" />
+                  <Avatar size="xl" fallback="LV" alt="Lovable" />
+                </div>
+              </div>
+              <div>
+                <p className="text-sm mb-3 text-muted-foreground">Not Rounded</p>
+                <div className="flex items-center gap-3">
+                  <Avatar size="sm" fallback="SM" rounded={false} alt="Square Small" />
+                  <Avatar size="md" src="https://i.pravatar.cc/150?img=5" rounded={false} alt="Square Medium" />
+                  <Avatar size="lg" fallback="LG" rounded={false} alt="Square Large" />
+                </div>
+              </div>
+              <div>
+                <p className="text-sm mb-3 text-muted-foreground">Image Error Fallback</p>
+                <div className="flex items-center gap-3">
+                  <Avatar size="md" src="https://invalid-url.com/image.jpg" fallback="ER" alt="Error Example" />
+                  <Avatar size="md" src="https://invalid-url.com/image.jpg" fallback="FB" alt="Fallback Example" />
+                </div>
+              </div>
             </div>
           </div>
 
