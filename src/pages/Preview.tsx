@@ -48,6 +48,9 @@ const Preview = () => {
   const [sliderValue, setSliderValue] = useState(50);
   const [offcanvasOpen, setOffcanvasOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
+  const [checkbox1, setCheckbox1] = useState(false);
+  const [checkbox2, setCheckbox2] = useState(true);
+  const [checkbox3, setCheckbox3] = useState(false);
 
   const toggleTheme = () => {
     const newTheme = !isDark;
@@ -159,9 +162,22 @@ const Preview = () => {
           <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Checkbox</h3>
             <div className="space-y-2">
-              <Checkbox label="Accept terms and conditions" />
-              <Checkbox label="Subscribe to newsletter" defaultChecked />
-              <Checkbox label="Disabled checkbox" disabled />
+              <Checkbox 
+                checked={checkbox1} 
+                onChange={setCheckbox1}
+                label="Accept terms and conditions" 
+              />
+              <Checkbox 
+                checked={checkbox2} 
+                onChange={setCheckbox2}
+                label="Subscribe to newsletter" 
+              />
+              <Checkbox 
+                checked={checkbox3} 
+                onChange={setCheckbox3}
+                label="Disabled checkbox" 
+                disabled 
+              />
             </div>
           </div>
 
