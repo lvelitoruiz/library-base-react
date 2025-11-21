@@ -3,23 +3,57 @@ import { SwitchProps } from './types';
 import { cn } from '@/lib/utils';
 
 export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
-  ({ label, className, ...props }, ref) => {
+  ({ checked, onChange, disabled, label, name, id }, ref) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      onChange(e.target.checked);
+    };
+
     return (
-      <label className="inline-flex items-center gap-2 cursor-pointer">
+      <label 
+        htmlFor={id}
+        className={cn(
+          "inline-flex items-center gap-2",
+          disabled ? "cursor-not-allowed opacity-60" : "cursor-pointer"
+        )}
+      >
         <div className="relative">
           <input
             ref={ref}
             type="checkbox"
+            id={id}
+            name={name}
+            checked={checked}
+            onChange={handleChange}
+            disabled={disabled}
             className="sr-only peer"
-            {...props}
+            role="switch"
+            aria-checked={checked}
+            aria-disabled={disabled}
           />
-          <div className={cn(
-            'w-11 h-6 bg-input border-2 border-border rounded-full peer peer-checked:bg-primary peer-checked:border-primary transition-colors',
-            className
-          )}></div>
-          <div className="absolute left-1 top-1 w-4 h-4 bg-background border border-border rounded-full transition-transform peer-checked:translate-x-5 peer-checked:border-primary-foreground peer-checked:bg-primary-foreground"></div>
+          <div 
+            className={cn(
+              'w-11 h-6 rounded-full transition-all duration-200',
+              'border-2',
+              checked 
+                ? 'bg-primary border-primary' 
+                : 'bg-input border-border',
+              !disabled && 'peer-focus-visible:ring-2 peer-focus-visible:ring-ring peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-background',
+              !disabled && !checked && 'hover:border-border/80'
+            )}
+          />
+          <div 
+            className={cn(
+              'absolute top-1 left-1 w-4 h-4 rounded-full transition-transform duration-200',
+              'bg-background shadow-sm',
+              checked && 'translate-x-5'
+            )}
+          />
         </div>
-        {label && <span className="text-[var(--font-size-base)]">{label}</span>}
+        {label && (
+          <span className="text-[var(--font-size-base)] select-none">
+            {label}
+          </span>
+        )}
       </label>
     );
   }
