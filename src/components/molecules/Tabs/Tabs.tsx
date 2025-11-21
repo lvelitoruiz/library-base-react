@@ -7,7 +7,7 @@ export const Tabs: React.FC<TabsProps> = ({ items, defaultIndex = 0 }) => {
 
   return (
     <div className="w-full">
-      <div className="flex gap-2 border-b border-[var(--color-neutral-300)]">
+      <div className="flex gap-2 border-b border-border">
         {items.map((item, index) => (
           <button
             key={index}
@@ -15,8 +15,8 @@ export const Tabs: React.FC<TabsProps> = ({ items, defaultIndex = 0 }) => {
             className={cn(
               'px-4 py-2 font-medium transition-colors',
               activeIndex === index
-                ? 'text-[var(--color-primary-500)] border-b-2 border-[var(--color-primary-500)]'
-                : 'text-[var(--color-neutral-600)] hover:text-[var(--color-neutral-900)]'
+                ? 'text-primary border-b-2 border-primary'
+                : 'text-muted-foreground hover:text-foreground'
             )}
           >
             {item.label}

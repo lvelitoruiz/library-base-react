@@ -14,10 +14,10 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
             {...props}
           />
           <div className={cn(
-            'w-11 h-6 bg-[var(--color-neutral-300)] rounded-full peer peer-checked:bg-[var(--color-primary-500)] transition-colors',
+            'w-11 h-6 bg-input border-2 border-border rounded-full peer peer-checked:bg-primary peer-checked:border-primary transition-colors',
             className
           )}></div>
-          <div className="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform peer-checked:translate-x-5"></div>
+          <div className="absolute left-1 top-1 w-4 h-4 bg-background border border-border rounded-full transition-transform peer-checked:translate-x-5 peer-checked:border-primary-foreground peer-checked:bg-primary-foreground"></div>
         </div>
         {label && <span className="text-[var(--font-size-base)]">{label}</span>}
       </label>

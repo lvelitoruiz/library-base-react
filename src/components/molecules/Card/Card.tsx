@@ -6,7 +6,7 @@ export const Card: React.FC<CardProps> = ({ className, children, ...props }) => 
   return (
     <div
       className={cn(
-        'bg-white border border-[var(--color-neutral-300)] rounded-[var(--radius-lg)] p-4 shadow-sm',
+        'bg-card text-card-foreground border border-border rounded-[var(--radius-lg)] p-4 shadow-sm',
         className
       )}
       {...props}
