@@ -48,6 +48,7 @@ const Preview = () => {
   const [sliderValue, setSliderValue] = useState(50);
   const [offcanvasOpen, setOffcanvasOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
+  const [selectedRadio, setSelectedRadio] = useState('1');
   const [checkbox1, setCheckbox1] = useState(false);
   const [checkbox2, setCheckbox2] = useState(true);
   const [checkbox3, setCheckbox3] = useState(false);
@@ -185,9 +186,27 @@ const Preview = () => {
           <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Radio</h3>
             <div className="space-y-2">
-              <Radio name="option" label="Option 1" value="1" defaultChecked />
-              <Radio name="option" label="Option 2" value="2" />
-              <Radio name="option" label="Option 3" value="3" />
+              <Radio 
+                name="option" 
+                label="Option 1" 
+                value="1" 
+                checked={selectedRadio === '1'}
+                onChange={() => setSelectedRadio('1')}
+              />
+              <Radio 
+                name="option" 
+                label="Option 2" 
+                value="2" 
+                checked={selectedRadio === '2'}
+                onChange={() => setSelectedRadio('2')}
+              />
+              <Radio 
+                name="option" 
+                label="Option 3" 
+                value="3" 
+                checked={selectedRadio === '3'}
+                onChange={() => setSelectedRadio('3')}
+              />
             </div>
           </div>
 
