@@ -1,26 +1,62 @@
 import React from 'react';
 import { BreadcrumbsProps } from './types';
+import { cn } from '@/lib/utils';
+import { ChevronRight } from 'lucide-react';
+import { Icon } from '@/components/atoms/Icon';
 
-export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
+export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ 
+  items, 
+  separator,
+  className 
+}) => {
+  const defaultSeparator = (
+    <Icon size={16}>
+      <ChevronRight className="w-full h-full" />
+    </Icon>
+  );
+
+  const separatorElement = separator !== undefined ? separator : defaultSeparator;
+
   return (
-    <nav className="flex items-center gap-2 text-sm">
-      {items.map((item, index) => (
-        <React.Fragment key={index}>
-          {item.href ? (
-            <a
-              href={item.href}
-              className="text-primary hover:underline"
-            >
-              {item.label}
-            </a>
-          ) : (
-            <span className="text-foreground">{item.label}</span>
-          )}
-          {index < items.length - 1 && (
-            <span className="text-muted-foreground">/</span>
-          )}
-        </React.Fragment>
-      ))}
+    <nav 
+      className={cn(
+        'flex items-center gap-x-1.5 text-sm',
+        className
+      )}
+      role="navigation"
+      aria-label="Breadcrumb"
+    >
+      {items.map((item, index) => {
+        const isLast = index === items.length - 1;
+        const hasHref = Boolean(item.href);
+        
+        return (
+          <React.Fragment key={index}>
+            {isLast ? (
+              <span className="font-medium text-[hsl(var(--foreground))]">
+                {item.label}
+              </span>
+            ) : hasHref ? (
+              <a
+                href={item.href}
+                className="inline-flex items-center text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] transition-colors duration-200"
+              >
+                {item.label}
+              </a>
+            ) : (
+              <span className="inline-flex items-center text-[hsl(var(--muted-foreground))]">
+                {item.label}
+              </span>
+            )}
+            
+            {!isLast && (
+              <span className="flex-shrink-0 text-[hsl(var(--muted-foreground))]">
+                {separatorElement}
+              </span>
+            )}
+          </React.Fragment>
+        );
+      })}
     </nav>
   );
 };

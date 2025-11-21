@@ -885,14 +885,35 @@ const Preview = () => {
           {/* Breadcrumbs */}
           <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Breadcrumbs</h3>
-            <Breadcrumbs
-              items={[
-                { label: 'Home', href: '/' },
-                { label: 'Products', href: '/products' },
-                { label: 'Category', href: '/products/category' },
-                { label: 'Item' },
-              ]}
-            />
+            <div className="space-y-4">
+              {/* Default separator */}
+              <Breadcrumbs
+                items={[
+                  { label: 'Home', href: '/' },
+                  { label: 'Products', href: '/products' },
+                  { label: 'Category', href: '/products/category' },
+                  { label: 'Item Details' },
+                ]}
+              />
+              
+              {/* Custom separator with slash */}
+              <Breadcrumbs
+                items={[
+                  { label: 'Dashboard', href: '/dashboard' },
+                  { label: 'Settings', href: '/settings' },
+                  { label: 'Profile' },
+                ]}
+                separator={<span>/</span>}
+              />
+              
+              {/* Item without href (plain text) */}
+              <Breadcrumbs
+                items={[
+                  { label: 'Home', href: '/' },
+                  { label: 'About' },
+                ]}
+              />
+            </div>
           </div>
 
           {/* Tabs */}
