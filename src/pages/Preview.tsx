@@ -253,12 +253,33 @@ const Preview = () => {
           {/* Badge */}
           <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Badge</h3>
-            <div className="flex flex-wrap gap-2">
-              <Badge variant="primary">Primary</Badge>
-              <Badge variant="secondary">Secondary</Badge>
-              <Badge variant="success">Success</Badge>
-              <Badge variant="warning">Warning</Badge>
-              <Badge variant="error">Error</Badge>
+            <div className="space-y-4">
+              <div>
+                <p className="text-sm mb-2 text-muted-foreground">Variants</p>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="primary">Primary</Badge>
+                  <Badge variant="secondary">Secondary</Badge>
+                  <Badge variant="success">Success</Badge>
+                  <Badge variant="warning">Warning</Badge>
+                  <Badge variant="danger">Danger</Badge>
+                </div>
+              </div>
+              <div>
+                <p className="text-sm mb-2 text-muted-foreground">Sizes</p>
+                <div className="flex flex-wrap gap-2 items-center">
+                  <Badge size="sm">Small</Badge>
+                  <Badge size="md">Medium</Badge>
+                  <Badge size="lg">Large</Badge>
+                </div>
+              </div>
+              <div>
+                <p className="text-sm mb-2 text-muted-foreground">Rounded</p>
+                <div className="flex flex-wrap gap-2">
+                  <Badge rounded>Rounded Badge</Badge>
+                  <Badge variant="success" rounded>Success</Badge>
+                  <Badge variant="danger" size="sm" rounded>Danger</Badge>
+                </div>
+              </div>
             </div>
           </div>
 
