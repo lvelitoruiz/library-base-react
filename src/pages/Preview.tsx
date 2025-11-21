@@ -52,6 +52,9 @@ const Preview = () => {
   const [checkbox1, setCheckbox1] = useState(false);
   const [checkbox2, setCheckbox2] = useState(true);
   const [checkbox3, setCheckbox3] = useState(false);
+  const [switch1, setSwitch1] = useState(false);
+  const [switch2, setSwitch2] = useState(true);
+  const [switch3, setSwitch3] = useState(false);
 
   const toggleTheme = () => {
     const newTheme = !isDark;
@@ -214,9 +217,22 @@ const Preview = () => {
           <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Switch</h3>
             <div className="space-y-2">
-              <Switch label="Enable notifications" />
-              <Switch label="Dark mode" defaultChecked />
-              <Switch label="Disabled" disabled />
+              <Switch 
+                checked={switch1}
+                onChange={setSwitch1}
+                label="Enable notifications" 
+              />
+              <Switch 
+                checked={switch2}
+                onChange={setSwitch2}
+                label="Dark mode" 
+              />
+              <Switch 
+                checked={switch3}
+                onChange={setSwitch3}
+                label="Disabled" 
+                disabled 
+              />
             </div>
           </div>
 
