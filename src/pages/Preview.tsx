@@ -1133,19 +1133,55 @@ const Preview = () => {
           {/* Navbar */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Navbar</h3>
-            <Navbar
-              logo={<span className="font-bold text-primary">Logo</span>}
-            >
-              <a href="#" className="text-foreground hover:text-primary">
-                Home
-              </a>
-              <a href="#" className="text-foreground hover:text-primary">
-                Products
-              </a>
-              <a href="#" className="text-foreground hover:text-primary">
-                About
-              </a>
-            </Navbar>
+            <div className="space-y-6">
+              {/* Default navbar with links */}
+              <div>
+                <p className="text-sm text-muted-foreground mb-3">With logo, links, and right content</p>
+                <Navbar
+                  logo={<span className="font-bold text-primary">Brand</span>}
+                  links={[
+                    { label: 'Home', href: '#home' },
+                    { label: 'Products', href: '#products' },
+                    { label: 'About', href: '#about' },
+                    { label: 'Contact', href: '#contact' },
+                  ]}
+                  rightContent={
+                    <Button size="sm" variant="primary">
+                      Sign In
+                    </Button>
+                  }
+                />
+              </div>
+              
+              {/* Navbar with SearchBar */}
+              <div>
+                <p className="text-sm text-muted-foreground mb-3">With search bar</p>
+                <Navbar
+                  logo={
+                    <div className="flex items-center gap-2">
+                      <Icon size={24}>
+                        <Home className="w-full h-full text-primary" />
+                      </Icon>
+                      <span className="font-bold">Logo</span>
+                    </div>
+                  }
+                  links={[
+                    { label: 'Dashboard', href: '#dashboard' },
+                    { label: 'Settings', href: '#settings' },
+                  ]}
+                  rightContent={
+                    <div className="w-64">
+                      <SearchBar
+                        value={searchValue}
+                        onChange={setSearchValue}
+                        placeholder="Search..."
+                      />
+                    </div>
+                  }
+                  sticky={false}
+                />
+              </div>
+            </div>
           </div>
 
           {/* Header */}

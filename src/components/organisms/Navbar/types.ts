@@ -1,5 +1,12 @@
+export interface NavLink {
+  label: string;
+  href: string;
+}
+
 export interface NavbarProps {
-  children?: React.ReactNode;
   logo?: React.ReactNode;
+  links?: NavLink[];
+  rightContent?: React.ReactNode;
+  sticky?: boolean;
   className?: string;
 }
