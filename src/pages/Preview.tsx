@@ -326,14 +326,42 @@ const Preview = () => {
           {/* Progress */}
           <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Progress</h3>
-            <div className="max-w-md space-y-4">
-              <div>
-                <p className="text-sm mb-2 text-foreground">Progress: {progress}%</p>
-                <Progress value={progress} />
+            <div className="space-y-6">
+              <div className="max-w-md space-y-4">
+                <div>
+                  <p className="text-sm mb-2 text-muted-foreground">Variants</p>
+                  <div className="space-y-3">
+                    <Progress value={progress} variant="primary" label={true} />
+                    <Progress value={75} variant="secondary" label={true} />
+                    <Progress value={90} variant="success" label={true} />
+                    <Progress value={50} variant="warning" label={true} />
+                    <Progress value={30} variant="danger" label={true} />
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm mb-2 text-muted-foreground">Sizes</p>
+                  <div className="space-y-3">
+                    <Progress value={60} size="sm" label="Small" />
+                    <Progress value={70} size="md" label="Medium" />
+                    <Progress value={80} size="lg" label="Large" />
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm mb-2 text-muted-foreground">Custom Labels</p>
+                  <div className="space-y-3">
+                    <Progress value={progress} label={`${progress}% Complete`} />
+                    <Progress value={45} label="Loading assets..." variant="secondary" />
+                    <Progress value={100} label="Done!" variant="success" />
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm mb-2 text-muted-foreground">Without Label</p>
+                  <Progress value={progress} />
+                </div>
+                <Button size="sm" onClick={() => setProgress(Math.min(100, progress + 10))}>
+                  Increase +10%
+                </Button>
               </div>
-              <Button size="sm" onClick={() => setProgress(Math.min(100, progress + 10))}>
-                Increase +10%
-              </Button>
             </div>
           </div>
 
