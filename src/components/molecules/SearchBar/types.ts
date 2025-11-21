@@ -1,3 +1,8 @@
-export interface SearchBarProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
-  onSearch?: (value: string) => void;
+export interface SearchBarProps {
+  value: string;
+  onChange: (value: string) => void;
+  placeholder?: string;
+  clearable?: boolean;
+  onClear?: () => void;
+  className?: string;
 }

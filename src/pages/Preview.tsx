@@ -58,6 +58,7 @@ const Preview = () => {
   const [switch1, setSwitch1] = useState(false);
   const [switch2, setSwitch2] = useState(true);
   const [switch3, setSwitch3] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
 
   const toggleTheme = () => {
     const newTheme = !isDark;
@@ -1025,11 +1026,34 @@ const Preview = () => {
           {/* SearchBar */}
           <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
             <h3 className="text-xl font-semibold mb-4 text-foreground">SearchBar</h3>
-            <div className="max-w-md">
-              <SearchBar
-                placeholder="Search components..."
-                onSearch={(value) => console.log('Search:', value)}
-              />
+            <div className="space-y-4 max-w-md">
+              {/* Default SearchBar with clear button */}
+              <div>
+                <p className="text-sm text-muted-foreground mb-2">With clear button (default)</p>
+                <SearchBar
+                  value={searchValue}
+                  onChange={setSearchValue}
+                  placeholder="Search components..."
+                />
+              </div>
+              
+              {/* SearchBar without clear button */}
+              <div>
+                <p className="text-sm text-muted-foreground mb-2">Without clear button</p>
+                <SearchBar
+                  value={searchValue}
+                  onChange={setSearchValue}
+                  placeholder="Search..."
+                  clearable={false}
+                />
+              </div>
+              
+              {/* Current search value display */}
+              {searchValue && (
+                <div className="text-sm text-foreground">
+                  Current search: <span className="font-medium">{searchValue}</span>
+                </div>
+              )}
             </div>
           </div>
 

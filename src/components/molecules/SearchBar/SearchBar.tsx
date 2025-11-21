@@ -1,32 +1,96 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { SearchBarProps } from './types';
 import { cn } from '@/lib/utils';
+import { Search, X } from 'lucide-react';
+import { Icon } from '@/components/atoms/Icon';
 
 export const SearchBar: React.FC<SearchBarProps> = ({
-  onSearch,
-  className,
-  ...props
+  value,
+  onChange,
+  placeholder = "Search...",
+  clearable = true,
+  onClear,
+  className
 }) => {
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter' && onSearch) {
-      onSearch(e.currentTarget.value);
+  const [isFocused, setIsFocused] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const handleClear = () => {
+    if (onClear) {
+      onClear();
+    } else {
+      onChange("");
     }
+    inputRef.current?.focus();
   };
 
+  const showClearButton = clearable && value.length > 0;
+
   return (
-    <div className="relative w-full">
+    <div
+      role="search"
+      className={cn(
+        'w-full flex items-center gap-x-2',
+        'px-3 py-2',
+        'rounded-lg',
+        'bg-[hsl(var(--card))]',
+        'border border-[hsl(var(--border))]',
+        'transition-colors duration-200',
+        isFocused && 'border-[hsl(var(--primary))] ring-2 ring-[hsl(var(--ring))] ring-opacity-20',
+        className
+      )}
+    >
+      {/* Search Icon */}
+      <Icon size={20}>
+        <Search 
+          className="w-full h-full text-[hsl(var(--muted-foreground))]" 
+          aria-hidden="true"
+        />
+      </Icon>
+
+      {/* Input */}
       <input
-        type="search"
+        ref={inputRef}
+        type="text"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
+        placeholder={placeholder}
+        aria-label={placeholder ? undefined : "Search"}
         className={cn(
-          'w-full px-4 py-2 pl-10 bg-white border border-[var(--color-neutral-300)] rounded-[var(--radius-lg)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)]',
-          className
+          'flex-grow',
+          'bg-transparent',
+          'border-none',
+          'outline-none',
+          'text-[hsl(var(--foreground))]',
+          'placeholder:text-[hsl(var(--muted-foreground))]',
+          'text-sm'
         )}
-        onKeyDown={handleKeyDown}
-        {...props}
       />
-      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--color-neutral-400)]">
-        🔍
-      </span>
+
+      {/* Clear Button */}
+      {showClearButton && (
+        <button
+          type="button"
+          onClick={handleClear}
+          aria-label="Clear search"
+          role="button"
+          className={cn(
+            'flex-shrink-0',
+            'p-1',
+            'rounded-full',
+            'hover:bg-[hsl(var(--accent))]',
+            'transition-colors duration-200',
+            'text-[hsl(var(--foreground))]',
+            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))]'
+          )}
+        >
+          <Icon size={16}>
+            <X className="w-full h-full" />
+          </Icon>
+        </button>
+      )}
     </div>
   );
 };
