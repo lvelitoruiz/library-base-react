@@ -53,6 +53,8 @@ const Preview = () => {
   const [checkbox1, setCheckbox1] = useState(false);
   const [checkbox2, setCheckbox2] = useState(true);
   const [checkbox3, setCheckbox3] = useState(false);
+  const [activeTab, setActiveTab] = useState('overview');
+  const [activeTab2, setActiveTab2] = useState('profile');
   const [switch1, setSwitch1] = useState(false);
   const [switch2, setSwitch2] = useState(true);
   const [switch3, setSwitch3] = useState(false);
@@ -919,13 +921,48 @@ const Preview = () => {
           {/* Tabs */}
           <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Tabs</h3>
-            <Tabs
-              items={[
-                { label: 'Overview', content: <p className="text-foreground">Overview content goes here.</p> },
-                { label: 'Details', content: <p className="text-foreground">Details content goes here.</p> },
-                { label: 'Settings', content: <p className="text-foreground">Settings content goes here.</p> },
-              ]}
-            />
+            <div className="space-y-6">
+              {/* Default tabs */}
+              <div>
+                <Tabs
+                  tabs={[
+                    { label: 'Overview', value: 'overview' },
+                    { label: 'Details', value: 'details' },
+                    { label: 'Settings', value: 'settings' },
+                  ]}
+                  value={activeTab}
+                  onChange={setActiveTab}
+                />
+                <div className="mt-4 p-4 bg-muted rounded-lg">
+                  <p className="text-foreground">
+                    {activeTab === 'overview' && 'Overview content goes here.'}
+                    {activeTab === 'details' && 'Details content goes here.'}
+                    {activeTab === 'settings' && 'Settings content goes here.'}
+                  </p>
+                </div>
+              </div>
+              
+              {/* Full width tabs */}
+              <div>
+                <Tabs
+                  tabs={[
+                    { label: 'Profile', value: 'profile' },
+                    { label: 'Account', value: 'account' },
+                    { label: 'Security', value: 'security' },
+                  ]}
+                  value={activeTab2}
+                  onChange={setActiveTab2}
+                  fullWidth
+                />
+                <div className="mt-4 p-4 bg-muted rounded-lg">
+                  <p className="text-foreground">
+                    {activeTab2 === 'profile' && 'Profile content here.'}
+                    {activeTab2 === 'account' && 'Account settings here.'}
+                    {activeTab2 === 'security' && 'Security options here.'}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Accordion */}

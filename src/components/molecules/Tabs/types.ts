@@ -1,9 +1,12 @@
 export interface TabItem {
   label: string;
-  content: React.ReactNode;
+  value: string;
 }
 
 export interface TabsProps {
-  items: TabItem[];
-  defaultIndex?: number;
+  tabs: TabItem[];
+  value: string;
+  onChange: (value: string) => void;
+  fullWidth?: boolean;
+  className?: string;
 }
