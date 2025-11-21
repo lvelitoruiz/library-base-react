@@ -9,15 +9,15 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
           {item.href ? (
             <a
               href={item.href}
-              className="text-[var(--color-primary-500)] hover:underline"
+              className="text-primary hover:underline"
             >
               {item.label}
             </a>
           ) : (
-            <span className="text-[var(--color-neutral-600)]">{item.label}</span>
+            <span className="text-foreground">{item.label}</span>
           )}
           {index < items.length - 1 && (
-            <span className="text-[var(--color-neutral-400)]">/</span>
+            <span className="text-muted-foreground">/</span>
           )}
         </React.Fragment>
       ))}

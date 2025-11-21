@@ -10,11 +10,11 @@ export const Accordion: React.FC<AccordionProps> = ({ items }) => {
       {items.map((item, index) => (
         <div
           key={index}
-          className="border-b border-[var(--color-neutral-300)] last:border-b-0"
+          className="border-b border-border last:border-b-0"
         >
           <button
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
-            className="w-full px-4 py-3 text-left font-medium hover:bg-[var(--color-neutral-50)] transition-colors flex justify-between items-center"
+            className="w-full px-4 py-3 text-left font-medium text-foreground hover:bg-accent transition-colors flex justify-between items-center"
           >
             <span>{item.title}</span>
             <span className={cn('transition-transform', openIndex === index && 'rotate-180')}>
@@ -22,7 +22,7 @@ export const Accordion: React.FC<AccordionProps> = ({ items }) => {
             </span>
           </button>
           {openIndex === index && (
-            <div className="px-4 py-3 bg-[var(--color-neutral-50)]">
+            <div className="px-4 py-3 bg-muted text-foreground">
               {item.content}
             </div>
           )}
