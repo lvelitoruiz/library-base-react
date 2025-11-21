@@ -559,23 +559,78 @@ const Preview = () => {
           <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
             <h3 className="text-xl font-semibold mb-4 text-foreground">FormField</h3>
             <div className="max-w-md space-y-4">
-              <FormField
-                id="email"
-                label="Email"
-                placeholder="Enter your email"
-                required
-              />
-              <FormField
-                id="password"
-                label="Password"
-                type="password"
-                helperText="Must be at least 8 characters"
-              />
-              <FormField
-                id="username"
-                label="Username"
-                error="Username is already taken"
-              />
+              <div>
+                <p className="text-sm mb-3 text-muted-foreground">Con Input</p>
+                <div className="space-y-4">
+                  <FormField
+                    id="email"
+                    label="Email"
+                    required
+                  >
+                    <Input placeholder="Enter your email" />
+                  </FormField>
+                  
+                  <FormField
+                    id="password"
+                    label="Password"
+                    hint="Must be at least 8 characters"
+                  >
+                    <Input type="password" placeholder="Enter your password" />
+                  </FormField>
+                  
+                  <FormField
+                    id="username"
+                    label="Username"
+                    error="Username is already taken"
+                  >
+                    <Input placeholder="Choose a username" />
+                  </FormField>
+                </div>
+              </div>
+
+              <div>
+                <p className="text-sm mb-3 text-muted-foreground">Con Textarea</p>
+                <FormField
+                  id="message"
+                  label="Message"
+                  hint="Enter your message here"
+                  required
+                >
+                  <Textarea placeholder="Type your message..." rows={4} />
+                </FormField>
+              </div>
+
+              <div>
+                <p className="text-sm mb-3 text-muted-foreground">Con Select</p>
+                <FormField
+                  id="country"
+                  label="Country"
+                  required
+                >
+                  <Select
+                    options={[
+                      { label: 'United States', value: 'us' },
+                      { label: 'Canada', value: 'ca' },
+                      { label: 'Mexico', value: 'mx' },
+                    ]}
+                    placeholder="Select your country"
+                  />
+                </FormField>
+              </div>
+
+              <div>
+                <p className="text-sm mb-3 text-muted-foreground">Con Checkbox</p>
+                <FormField
+                  id="terms"
+                  hint="You must agree to continue"
+                >
+                  <Checkbox 
+                    checked={false}
+                    onChange={() => {}}
+                    label="I agree to the terms and conditions" 
+                  />
+                </FormField>
+              </div>
             </div>
           </div>
 

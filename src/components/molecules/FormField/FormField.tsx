@@ -1,45 +1,64 @@
 import React from 'react';
-import { Input } from '../../atoms/Input';
 import { FormFieldProps } from './types';
 import { cn } from '@/lib/utils';
 
-export const FormField = React.forwardRef<HTMLInputElement, FormFieldProps>(
-  ({ label, id, error, helperText, required, className, ...inputProps }, ref) => {
-    return (
-      <div className={cn('flex flex-col gap-1.5', className)}>
+export const FormField: React.FC<FormFieldProps> = ({
+  label,
+  required = false,
+  error,
+  hint,
+  children,
+  id,
+  className
+}) => {
+  const errorId = id ? `${id}-error` : undefined;
+  const hintId = id ? `${id}-hint` : undefined;
+
+  // Clone children to add id and aria-describedby
+  const childrenWithProps = React.isValidElement(children)
+    ? React.cloneElement(children as React.ReactElement<any>, {
+        id: id || (children as any).props?.id,
+        'aria-describedby': error ? errorId : hint ? hintId : undefined,
+        'aria-invalid': error ? true : undefined,
+      })
+    : children;
+
+  return (
+    <div className={cn('flex flex-col gap-y-1.5', className)}>
+      {label && (
         <label
           htmlFor={id}
-          className="text-[var(--font-size-sm)] font-medium text-[var(--color-neutral-700)]"
+          className="text-sm font-medium text-foreground"
         >
           {label}
-          {required && <span className="text-[var(--color-error-500)] ml-1">*</span>}
+          {required && (
+            <span className="text-destructive ml-1" aria-label="required">
+              *
+            </span>
+          )}
         </label>
-        <Input
-          ref={ref}
-          id={id}
-          error={error}
-          aria-describedby={error ? `${id}-error` : helperText ? `${id}-helper` : undefined}
-          {...inputProps}
-        />
-        {error && (
-          <p
-            id={`${id}-error`}
-            className="text-[var(--font-size-sm)] text-[var(--color-error-500)]"
-          >
-            {error}
-          </p>
-        )}
-        {!error && helperText && (
-          <p
-            id={`${id}-helper`}
-            className="text-[var(--font-size-sm)] text-[var(--color-neutral-500)]"
-          >
-            {helperText}
-          </p>
-        )}
-      </div>
-    );
-  }
-);
-
-FormField.displayName = 'FormField';
+      )}
+      
+      {childrenWithProps}
+      
+      {error && (
+        <p
+          id={errorId}
+          className="text-xs text-destructive mt-1"
+          role="alert"
+        >
+          {error}
+        </p>
+      )}
+      
+      {!error && hint && (
+        <p
+          id={hintId}
+          className="text-xs text-muted-foreground mt-1"
+        >
+          {hint}
+        </p>
+      )}
+    </div>
+  );
+};
