@@ -1,6 +1,11 @@
-export type AlertVariant = 'info' | 'success' | 'warning' | 'error';
+export type AlertVariant = 'info' | 'success' | 'warning' | 'danger';
 
-export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface AlertProps {
+  title?: string;
+  description?: string;
   variant?: AlertVariant;
-  children: React.ReactNode;
+  icon?: React.ReactNode;
+  closable?: boolean;
+  onClose?: () => void;
+  className?: string;
 }
