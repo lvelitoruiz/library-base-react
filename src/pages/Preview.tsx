@@ -14,6 +14,11 @@ import {
   Progress,
   Avatar,
   Icon,
+  Skeleton,
+  Spinner,
+  Divider,
+  Chip,
+  KBD,
   // Molecules
   FormField,
   Card,
@@ -25,6 +30,10 @@ import {
   Tabs,
   Accordion,
   SearchBar,
+  StatCard,
+  EmptyState,
+  SimpleTable,
+  Offcanvas,
   // Organisms
   Navbar,
   Sidebar,
@@ -37,14 +46,15 @@ import {
 const Preview = () => {
   const [progress, setProgress] = useState(65);
   const [sliderValue, setSliderValue] = useState(50);
+  const [offcanvasOpen, setOffcanvasOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[var(--color-neutral-50)]">
+    <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <div className="sticky top-0 z-50 bg-white border-b border-[var(--color-neutral-300)] px-6 py-4">
+      <div className="sticky top-0 z-50 bg-card border-b border-border px-6 py-4 shadow-sm">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-[var(--color-neutral-900)]">Component Library Preview</h1>
-          <a href="/" className="text-[var(--color-primary-500)] hover:underline">
+          <h1 className="text-2xl font-bold text-foreground">Component Library Preview</h1>
+          <a href="/" className="text-primary hover:underline">
             Back to Home
           </a>
         </div>
@@ -54,11 +64,11 @@ const Preview = () => {
         
         {/* ATOMS SECTION */}
         <section>
-          <h2 className="text-3xl font-bold mb-6 text-[var(--color-neutral-900)]">Atoms</h2>
+          <h2 className="text-3xl font-bold mb-6 text-foreground">Atoms</h2>
           
           {/* Button */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">Button</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Button</h3>
             <div className="flex flex-wrap gap-4">
               <Button variant="primary" size="sm">Primary Small</Button>
               <Button variant="primary" size="md">Primary Medium</Button>
@@ -71,8 +81,8 @@ const Preview = () => {
           </div>
 
           {/* Input */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">Input</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Input</h3>
             <div className="space-y-4 max-w-md">
               <Input placeholder="Normal input" />
               <Input placeholder="Disabled input" disabled />
@@ -81,8 +91,8 @@ const Preview = () => {
           </div>
 
           {/* Textarea */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">Textarea</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Textarea</h3>
             <div className="space-y-4 max-w-md">
               <Textarea placeholder="Enter your message..." />
               <Textarea placeholder="Disabled textarea" disabled />
@@ -90,8 +100,8 @@ const Preview = () => {
           </div>
 
           {/* Select */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">Select</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Select</h3>
             <div className="space-y-4 max-w-md">
               <Select
                 options={[
@@ -104,8 +114,8 @@ const Preview = () => {
           </div>
 
           {/* Checkbox */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">Checkbox</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Checkbox</h3>
             <div className="space-y-2">
               <Checkbox label="Accept terms and conditions" />
               <Checkbox label="Subscribe to newsletter" defaultChecked />
@@ -114,8 +124,8 @@ const Preview = () => {
           </div>
 
           {/* Radio */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">Radio</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Radio</h3>
             <div className="space-y-2">
               <Radio name="option" label="Option 1" value="1" defaultChecked />
               <Radio name="option" label="Option 2" value="2" />
@@ -124,8 +134,8 @@ const Preview = () => {
           </div>
 
           {/* Switch */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">Switch</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Switch</h3>
             <div className="space-y-2">
               <Switch label="Enable notifications" />
               <Switch label="Dark mode" defaultChecked />
@@ -134,8 +144,8 @@ const Preview = () => {
           </div>
 
           {/* Slider */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">Slider</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Slider</h3>
             <div className="max-w-md space-y-4">
               <Slider
                 label={`Volume: ${sliderValue}%`}
@@ -146,8 +156,8 @@ const Preview = () => {
           </div>
 
           {/* Badge */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">Badge</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Badge</h3>
             <div className="flex flex-wrap gap-2">
               <Badge variant="primary">Primary</Badge>
               <Badge variant="secondary">Secondary</Badge>
@@ -158,8 +168,8 @@ const Preview = () => {
           </div>
 
           {/* Tag */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">Tag</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Tag</h3>
             <div className="flex flex-wrap gap-2">
               <Tag>React</Tag>
               <Tag>TypeScript</Tag>
@@ -168,11 +178,11 @@ const Preview = () => {
           </div>
 
           {/* Progress */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">Progress</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Progress</h3>
             <div className="max-w-md space-y-4">
               <div>
-                <p className="text-sm mb-2">Progress: {progress}%</p>
+                <p className="text-sm mb-2 text-foreground">Progress: {progress}%</p>
                 <Progress value={progress} />
               </div>
               <Button size="sm" onClick={() => setProgress(Math.min(100, progress + 10))}>
@@ -182,8 +192,8 @@ const Preview = () => {
           </div>
 
           {/* Avatar */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">Avatar</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Avatar</h3>
             <div className="flex items-center gap-4">
               <Avatar size="sm" alt="John Doe" />
               <Avatar size="md" alt="Jane Smith" />
@@ -193,8 +203,8 @@ const Preview = () => {
           </div>
 
           {/* Icon */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">Icon (Placeholder)</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Icon</h3>
             <div className="flex items-center gap-4">
               <Icon size={24}>
                 <path stroke="currentColor" strokeWidth="2" d="M12 2L2 7l10 5 10-5-10-5z" />
@@ -205,15 +215,76 @@ const Preview = () => {
               </Icon>
             </div>
           </div>
+
+          {/* Skeleton */}
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Skeleton</h3>
+            <div className="space-y-4 max-w-md">
+              <Skeleton width="100%" height="20px" />
+              <Skeleton width="80%" height="20px" />
+              <Skeleton width="60%" height="20px" />
+              <Skeleton variant="circular" width="60px" height="60px" />
+            </div>
+          </div>
+
+          {/* Spinner */}
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Spinner</h3>
+            <div className="flex items-center gap-4">
+              <Spinner size="sm" />
+              <Spinner size="md" />
+              <Spinner size="lg" />
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Divider</h3>
+            <div className="space-y-4">
+              <div>
+                <p className="text-sm text-muted-foreground mb-2">Horizontal</p>
+                <Divider />
+              </div>
+              <div className="flex items-center gap-4 h-20">
+                <p className="text-sm text-muted-foreground">Vertical</p>
+                <Divider orientation="vertical" />
+                <p className="text-sm text-muted-foreground">Example</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Chip */}
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Chip</h3>
+            <div className="flex flex-wrap gap-2">
+              <Chip label="Default" />
+              <Chip label="Primary" variant="primary" />
+              <Chip label="Success" variant="success" />
+              <Chip label="Error" variant="error" />
+              <Chip label="Removable" onRemove={() => alert('Chip removed')} />
+            </div>
+          </div>
+
+          {/* KBD */}
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">KBD</h3>
+            <div className="flex items-center gap-2 flex-wrap">
+              <p className="text-foreground">Press</p>
+              <KBD>Ctrl</KBD>
+              <p>+</p>
+              <KBD>K</KBD>
+              <p>to search</p>
+            </div>
+          </div>
         </section>
 
         {/* MOLECULES SECTION */}
         <section>
-          <h2 className="text-3xl font-bold mb-6 text-[var(--color-neutral-900)]">Molecules</h2>
+          <h2 className="text-3xl font-bold mb-6 text-foreground">Molecules</h2>
 
           {/* FormField */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">FormField</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">FormField</h3>
             <div className="max-w-md space-y-4">
               <FormField
                 id="email"
@@ -236,18 +307,18 @@ const Preview = () => {
           </div>
 
           {/* Card */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">Card</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Card</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Card>
-                <h4 className="font-semibold mb-2">Card Title</h4>
-                <p className="text-sm text-[var(--color-neutral-600)]">
+                <h4 className="font-semibold mb-2 text-foreground">Card Title</h4>
+                <p className="text-sm text-muted-foreground">
                   This is a card component with some content inside.
                 </p>
               </Card>
               <Card>
-                <h4 className="font-semibold mb-2">Another Card</h4>
-                <p className="text-sm text-[var(--color-neutral-600)]">
+                <h4 className="font-semibold mb-2 text-foreground">Another Card</h4>
+                <p className="text-sm text-muted-foreground">
                   Cards can contain any content you want.
                 </p>
               </Card>
@@ -255,17 +326,17 @@ const Preview = () => {
           </div>
 
           {/* Dropdown */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">Dropdown</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Dropdown</h3>
             <Dropdown trigger={<Button variant="secondary">Open Menu</Button>}>
               <div className="py-1">
-                <button className="block w-full text-left px-4 py-2 hover:bg-[var(--color-neutral-100)]">
+                <button className="block w-full text-left px-4 py-2 hover:bg-muted text-foreground">
                   Profile
                 </button>
-                <button className="block w-full text-left px-4 py-2 hover:bg-[var(--color-neutral-100)]">
+                <button className="block w-full text-left px-4 py-2 hover:bg-muted text-foreground">
                   Settings
                 </button>
-                <button className="block w-full text-left px-4 py-2 hover:bg-[var(--color-neutral-100)]">
+                <button className="block w-full text-left px-4 py-2 hover:bg-muted text-foreground">
                   Logout
                 </button>
               </div>
@@ -273,8 +344,8 @@ const Preview = () => {
           </div>
 
           {/* InputGroup */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">InputGroup</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">InputGroup</h3>
             <div className="max-w-md space-y-4">
               <InputGroup prefix={<span>$</span>}>
                 <Input placeholder="0.00" />
@@ -286,8 +357,8 @@ const Preview = () => {
           </div>
 
           {/* Alert */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">Alert</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Alert</h3>
             <div className="space-y-4">
               <Alert variant="info">This is an informational alert message.</Alert>
               <Alert variant="success">Operation completed successfully!</Alert>
@@ -297,8 +368,8 @@ const Preview = () => {
           </div>
 
           {/* Breadcrumbs */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">Breadcrumbs</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Breadcrumbs</h3>
             <Breadcrumbs
               items={[
                 { label: 'Home', href: '/' },
@@ -310,20 +381,20 @@ const Preview = () => {
           </div>
 
           {/* Tabs */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">Tabs</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Tabs</h3>
             <Tabs
               items={[
-                { label: 'Overview', content: <p>Overview content goes here.</p> },
-                { label: 'Details', content: <p>Details content goes here.</p> },
-                { label: 'Settings', content: <p>Settings content goes here.</p> },
+                { label: 'Overview', content: <p className="text-foreground">Overview content goes here.</p> },
+                { label: 'Details', content: <p className="text-foreground">Details content goes here.</p> },
+                { label: 'Settings', content: <p className="text-foreground">Settings content goes here.</p> },
               ]}
             />
           </div>
 
           {/* Accordion */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">Accordion</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Accordion</h3>
             <Accordion
               items={[
                 {
@@ -343,8 +414,8 @@ const Preview = () => {
           </div>
 
           {/* SearchBar */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">SearchBar</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">SearchBar</h3>
             <div className="max-w-md">
               <SearchBar
                 placeholder="Search components..."
@@ -353,26 +424,92 @@ const Preview = () => {
             </div>
           </div>
 
-          {/* ListItem (shown in ListGroup in organisms) */}
+          {/* StatCard */}
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">StatCard</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <StatCard
+                title="Total Users"
+                value="1,234"
+                description="Active users this month"
+                trend={{ direction: 'up', value: '+12.5%' }}
+              />
+              <StatCard
+                title="Revenue"
+                value="$12,345"
+                description="Total revenue"
+                trend={{ direction: 'up', value: '+8.2%' }}
+              />
+              <StatCard
+                title="Orders"
+                value="456"
+                description="Orders this week"
+                trend={{ direction: 'down', value: '-3.1%' }}
+              />
+            </div>
+          </div>
+
+          {/* EmptyState */}
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">EmptyState</h3>
+            <EmptyState
+              icon={
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+                  <path d="M12 8v4M12 16h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                </svg>
+              }
+              title="No data found"
+              description="There are no items to display at the moment. Try adding some content."
+              action={<Button size="sm">Add Item</Button>}
+            />
+          </div>
+
+          {/* SimpleTable */}
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">SimpleTable</h3>
+            <SimpleTable
+              headers={['Name', 'Email', 'Role', 'Status']}
+              rows={[
+                ['John Doe', 'john@example.com', 'Admin', 'Active'],
+                ['Jane Smith', 'jane@example.com', 'User', 'Active'],
+                ['Bob Johnson', 'bob@example.com', 'User', 'Inactive'],
+              ]}
+            />
+          </div>
+
+          {/* Offcanvas */}
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Offcanvas</h3>
+            <Button onClick={() => setOffcanvasOpen(true)}>Open Offcanvas</Button>
+            <Offcanvas
+              isOpen={offcanvasOpen}
+              onClose={() => setOffcanvasOpen(false)}
+              title="Offcanvas Title"
+              position="right"
+            >
+              <p className="text-foreground">This is the offcanvas content.</p>
+            </Offcanvas>
+          </div>
         </section>
 
         {/* ORGANISMS SECTION */}
         <section>
-          <h2 className="text-3xl font-bold mb-6 text-[var(--color-neutral-900)]">Organisms</h2>
+          <h2 className="text-3xl font-bold mb-6 text-foreground">Organisms</h2>
 
           {/* Navbar */}
           <div className="mb-8">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">Navbar</h3>
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Navbar</h3>
             <Navbar
-              logo={<span className="font-bold text-[var(--color-primary-500)]">Logo</span>}
+              logo={<span className="font-bold text-primary">Logo</span>}
             >
-              <a href="#" className="text-[var(--color-neutral-700)] hover:text-[var(--color-primary-500)]">
+              <a href="#" className="text-foreground hover:text-primary">
                 Home
               </a>
-              <a href="#" className="text-[var(--color-neutral-700)] hover:text-[var(--color-primary-500)]">
+              <a href="#" className="text-foreground hover:text-primary">
                 Products
               </a>
-              <a href="#" className="text-[var(--color-neutral-700)] hover:text-[var(--color-primary-500)]">
+              <a href="#" className="text-foreground hover:text-primary">
                 About
               </a>
             </Navbar>
@@ -380,51 +517,51 @@ const Preview = () => {
 
           {/* Header */}
           <div className="mb-8">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">Header</h3>
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Header</h3>
             <Header>
               <div className="flex items-center justify-between w-full">
-                <h2 className="text-xl font-bold">Page Header</h2>
+                <h2 className="text-xl font-bold text-foreground">Page Header</h2>
                 <Button size="sm">Action</Button>
               </div>
             </Header>
           </div>
 
           {/* Sidebar */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">Sidebar</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Sidebar</h3>
             <div className="flex gap-4 h-64">
               <Sidebar isOpen={true}>
                 <nav className="space-y-2">
-                  <a href="#" className="block px-3 py-2 rounded hover:bg-[var(--color-neutral-100)]">
+                  <a href="#" className="block px-3 py-2 rounded hover:bg-muted text-foreground">
                     Dashboard
                   </a>
-                  <a href="#" className="block px-3 py-2 rounded hover:bg-[var(--color-neutral-100)]">
+                  <a href="#" className="block px-3 py-2 rounded hover:bg-muted text-foreground">
                     Projects
                   </a>
-                  <a href="#" className="block px-3 py-2 rounded hover:bg-[var(--color-neutral-100)]">
+                  <a href="#" className="block px-3 py-2 rounded hover:bg-muted text-foreground">
                     Team
                   </a>
                 </nav>
               </Sidebar>
-              <div className="flex-1 p-4 bg-[var(--color-neutral-100)] rounded">
-                <p>Main content area</p>
+              <div className="flex-1 p-4 bg-muted rounded">
+                <p className="text-foreground">Main content area</p>
               </div>
             </div>
           </div>
 
           {/* Footer */}
           <div className="mb-8">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">Footer</h3>
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Footer</h3>
             <Footer>
               <div className="flex justify-between items-center w-full">
-                <p className="text-sm text-[var(--color-neutral-600)]">
+                <p className="text-sm text-muted-foreground">
                   © 2024 Component Library. All rights reserved.
                 </p>
                 <div className="flex gap-4">
-                  <a href="#" className="text-sm text-[var(--color-neutral-600)] hover:text-[var(--color-primary-500)]">
+                  <a href="#" className="text-sm text-muted-foreground hover:text-primary">
                     Privacy
                   </a>
-                  <a href="#" className="text-sm text-[var(--color-neutral-600)] hover:text-[var(--color-primary-500)]">
+                  <a href="#" className="text-sm text-muted-foreground hover:text-primary">
                     Terms
                   </a>
                 </div>
@@ -433,20 +570,20 @@ const Preview = () => {
           </div>
 
           {/* Toolbar */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">Toolbar</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Toolbar</h3>
             <Toolbar>
               <Button size="sm" variant="ghost">Bold</Button>
               <Button size="sm" variant="ghost">Italic</Button>
               <Button size="sm" variant="ghost">Underline</Button>
-              <div className="border-l border-[var(--color-neutral-300)] h-6 mx-1" />
+              <div className="border-l border-border h-6 mx-1" />
               <Button size="sm" variant="ghost">Link</Button>
             </Toolbar>
           </div>
 
           {/* ListGroup with ListItem */}
-          <div className="mb-8 p-6 bg-white rounded-[var(--radius-lg)] border border-[var(--color-neutral-300)]">
-            <h3 className="text-xl font-semibold mb-4 text-[var(--color-neutral-800)]">ListGroup & ListItem</h3>
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">ListGroup & ListItem</h3>
             <ListGroup>
               <ListItem>First item in the list</ListItem>
               <ListItem>Second item in the list</ListItem>
