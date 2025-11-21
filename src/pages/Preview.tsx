@@ -240,11 +240,13 @@ const Preview = () => {
           <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Slider</h3>
             <div className="max-w-md space-y-4">
-              <Slider
-                label={`Volume: ${sliderValue}%`}
-                value={sliderValue}
-                onChange={(e) => setSliderValue(Number(e.target.value))}
-              />
+              <div>
+                <p className="text-sm mb-2 text-foreground">Volume: {sliderValue}%</p>
+                <Slider
+                  value={sliderValue}
+                  onChange={setSliderValue}
+                />
+              </div>
             </div>
           </div>
 
