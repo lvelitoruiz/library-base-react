@@ -785,19 +785,36 @@ const Preview = () => {
           {/* Dropdown */}
           <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Dropdown</h3>
-            <Dropdown trigger={<Button variant="secondary">Open Menu</Button>}>
-              <div className="py-1">
-                <button className="block w-full text-left px-4 py-2 hover:bg-muted text-foreground">
-                  Profile
-                </button>
-                <button className="block w-full text-left px-4 py-2 hover:bg-muted text-foreground">
-                  Settings
-                </button>
-                <button className="block w-full text-left px-4 py-2 hover:bg-muted text-foreground">
-                  Logout
-                </button>
-              </div>
-            </Dropdown>
+            <div className="flex gap-4">
+              <Dropdown
+                trigger={<Button variant="primary">Open Menu</Button>}
+                items={[
+                  { label: "Profile", value: "profile" },
+                  { label: "Settings", value: "settings" },
+                  { label: "Logout", value: "logout" }
+                ]}
+                onSelect={(value) => console.log("Selected:", value)}
+              />
+              <Dropdown
+                trigger={<Button variant="secondary">Options</Button>}
+                items={[
+                  { label: "Edit", value: "edit" },
+                  { label: "Duplicate", value: "duplicate" },
+                  { label: "Delete", value: "delete" }
+                ]}
+                onSelect={(value) => console.log("Selected:", value)}
+                align="right"
+              />
+              <Dropdown
+                trigger={<Button variant="primary" disabled>Disabled</Button>}
+                items={[
+                  { label: "Item 1", value: "item1" },
+                  { label: "Item 2", value: "item2" }
+                ]}
+                onSelect={(value) => console.log("Selected:", value)}
+                disabled
+              />
+            </div>
           </div>
 
           {/* InputGroup */}
