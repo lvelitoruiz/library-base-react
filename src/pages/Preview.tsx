@@ -1074,14 +1074,116 @@ const Preview = () => {
             </Toolbar>
           </div>
 
+          {/* ListItem */}
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">ListItem</h3>
+            <div className="space-y-2 max-w-md">
+              <ListItem 
+                title="Simple list item" 
+              />
+              <ListItem 
+                title="With description" 
+                description="This is a secondary description text"
+              />
+              <ListItem 
+                title="With left icon"
+                description="Email notification settings"
+                leftIcon={
+                  <Icon size={20}>
+                    <Bell className="w-full h-full" />
+                  </Icon>
+                }
+              />
+              <ListItem 
+                title="With right icon"
+                description="Navigate to profile page"
+                rightIcon={
+                  <Icon size={16}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-full h-full">
+                      <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                  </Icon>
+                }
+              />
+              <ListItem 
+                title="Clickable item"
+                description="Click me to see the action"
+                leftIcon={
+                  <Icon size={20}>
+                    <User className="w-full h-full" />
+                  </Icon>
+                }
+                rightIcon={
+                  <Icon size={16}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-full h-full">
+                      <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                  </Icon>
+                }
+                clickable
+                onClick={() => console.log('Item clicked!')}
+              />
+              <ListItem 
+                title="Settings"
+                description="Manage your account settings"
+                leftIcon={
+                  <Icon size={20}>
+                    <Settings className="w-full h-full" />
+                  </Icon>
+                }
+                clickable
+                onClick={() => console.log('Settings clicked!')}
+              />
+            </div>
+          </div>
+
           {/* ListGroup with ListItem */}
           <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
             <h3 className="text-xl font-semibold mb-4 text-foreground">ListGroup & ListItem</h3>
             <ListGroup>
-              <ListItem>First item in the list</ListItem>
-              <ListItem>Second item in the list</ListItem>
-              <ListItem>Third item in the list</ListItem>
-              <ListItem>Fourth item in the list</ListItem>
+              <ListItem 
+                title="Home" 
+                leftIcon={
+                  <Icon size={20}>
+                    <Home className="w-full h-full" />
+                  </Icon>
+                }
+                clickable
+                onClick={() => console.log('Home')}
+              />
+              <ListItem 
+                title="Profile" 
+                description="View and edit your profile"
+                leftIcon={
+                  <Icon size={20}>
+                    <User className="w-full h-full" />
+                  </Icon>
+                }
+                clickable
+                onClick={() => console.log('Profile')}
+              />
+              <ListItem 
+                title="Notifications" 
+                description="3 new notifications"
+                leftIcon={
+                  <Icon size={20}>
+                    <Bell className="w-full h-full" />
+                  </Icon>
+                }
+                rightIcon={<Badge size="sm" variant="primary">3</Badge>}
+                clickable
+                onClick={() => console.log('Notifications')}
+              />
+              <ListItem 
+                title="Settings" 
+                leftIcon={
+                  <Icon size={20}>
+                    <Settings className="w-full h-full" />
+                  </Icon>
+                }
+                clickable
+                onClick={() => console.log('Settings')}
+              />
             </ListGroup>
           </div>
         </section>
