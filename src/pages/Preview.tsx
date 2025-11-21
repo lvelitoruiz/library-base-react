@@ -637,19 +637,148 @@ const Preview = () => {
           {/* Card */}
           <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Card</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <Card>
-                <h4 className="font-semibold mb-2 text-foreground">Card Title</h4>
-                <p className="text-sm text-muted-foreground">
-                  This is a card component with some content inside.
-                </p>
-              </Card>
-              <Card>
-                <h4 className="font-semibold mb-2 text-foreground">Another Card</h4>
-                <p className="text-sm text-muted-foreground">
-                  Cards can contain any content you want.
-                </p>
-              </Card>
+            <div className="space-y-6">
+              <div>
+                <p className="text-sm mb-3 text-muted-foreground">Básico con título y descripción</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <Card
+                    title="Card Title"
+                    description="This is a description that provides context about the card content."
+                  >
+                    <p className="text-sm text-foreground">
+                      Main card content goes here. You can add any React elements.
+                    </p>
+                  </Card>
+                  
+                  <Card title="Simple Card">
+                    <p className="text-sm text-foreground">
+                      Card with only a title and content.
+                    </p>
+                  </Card>
+                </div>
+              </div>
+
+              <div>
+                <p className="text-sm mb-3 text-muted-foreground">Con header y footer</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <Card
+                    header={
+                      <div className="p-4 bg-primary/10">
+                        <p className="text-sm font-semibold text-primary">Header Section</p>
+                      </div>
+                    }
+                    footer={
+                      <div className="flex justify-end gap-2">
+                        <Button variant="ghost" size="sm">Cancel</Button>
+                        <Button variant="primary" size="sm">Save</Button>
+                      </div>
+                    }
+                  >
+                    <p className="text-sm text-foreground">
+                      Card with custom header and footer sections.
+                    </p>
+                  </Card>
+                  
+                  <Card
+                    footer={
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs text-muted-foreground">Updated 2 hours ago</span>
+                        <Button variant="ghost" size="sm">View Details</Button>
+                      </div>
+                    }
+                  >
+                    <p className="text-sm font-medium text-foreground mb-2">Status Update</p>
+                    <p className="text-sm text-muted-foreground">
+                      All systems operational.
+                    </p>
+                  </Card>
+                </div>
+              </div>
+
+              <div>
+                <p className="text-sm mb-3 text-muted-foreground">Padding variants</p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <Card title="Small Padding" padding="sm">
+                    <p className="text-sm text-foreground">Compact card with small padding.</p>
+                  </Card>
+                  
+                  <Card title="Medium Padding" padding="md">
+                    <p className="text-sm text-foreground">Default padding (medium).</p>
+                  </Card>
+                  
+                  <Card title="Large Padding" padding="lg">
+                    <p className="text-sm text-foreground">Spacious card with large padding.</p>
+                  </Card>
+                </div>
+              </div>
+
+              <div>
+                <p className="text-sm mb-3 text-muted-foreground">Shadow variants</p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <Card title="No Shadow" shadow="none" bordered>
+                    <p className="text-sm text-foreground">Card without shadow but with border.</p>
+                  </Card>
+                  
+                  <Card title="Small Shadow" shadow="sm">
+                    <p className="text-sm text-foreground">Card with subtle shadow (default).</p>
+                  </Card>
+                  
+                  <Card title="Medium Shadow" shadow="md">
+                    <p className="text-sm text-foreground">Card with medium shadow.</p>
+                  </Card>
+                </div>
+              </div>
+
+              <div>
+                <p className="text-sm mb-3 text-muted-foreground">Bordered</p>
+                <Card 
+                  title="Bordered Card" 
+                  description="This card has a visible border"
+                  bordered
+                  shadow="none"
+                >
+                  <p className="text-sm text-foreground">
+                    Use borders when you want clear visual separation without shadows.
+                  </p>
+                </Card>
+              </div>
+
+              <div>
+                <p className="text-sm mb-3 text-muted-foreground">Complejo con todas las opciones</p>
+                <Card
+                  title="Complete Card Example"
+                  description="Demonstrating all features together"
+                  header={
+                    <div className="p-3 flex items-center gap-2 bg-muted/50">
+                      <Badge variant="success" size="sm">Active</Badge>
+                      <span className="text-xs text-muted-foreground">Premium Plan</span>
+                    </div>
+                  }
+                  footer={
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-muted-foreground">Last updated: Today</span>
+                      <div className="flex gap-2">
+                        <Button variant="ghost" size="sm">Edit</Button>
+                        <Button variant="primary" size="sm">Upgrade</Button>
+                      </div>
+                    </div>
+                  }
+                  padding="lg"
+                  shadow="md"
+                  bordered
+                >
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium text-foreground">Storage Used</span>
+                      <span className="text-sm text-muted-foreground">45 GB / 100 GB</span>
+                    </div>
+                    <Progress value={45} variant="primary" />
+                    <p className="text-xs text-muted-foreground">
+                      You have 55 GB of storage remaining.
+                    </p>
+                  </div>
+                </Card>
+              </div>
             </div>
           </div>
 
