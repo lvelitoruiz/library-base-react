@@ -968,22 +968,58 @@ const Preview = () => {
           {/* Accordion */}
           <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Accordion</h3>
-            <Accordion
-              items={[
-                {
-                  title: 'What is this component library?',
-                  content: 'This is a React component library built with TypeScript and Tailwind CSS.',
-                },
-                {
-                  title: 'How do I use these components?',
-                  content: 'Import the components from the library and use them in your React application.',
-                },
-                {
-                  title: 'Can I customize the styles?',
-                  content: 'Yes, all components support custom styling through className props.',
-                },
-              ]}
-            />
+            <div className="space-y-6">
+              {/* Single mode (default) */}
+              <div>
+                <p className="text-sm text-muted-foreground mb-3">Single mode (only one open at a time)</p>
+                <Accordion
+                  items={[
+                    {
+                      id: 'item1',
+                      title: 'What is this component library?',
+                      content: 'This is a React component library built with TypeScript and Tailwind CSS.',
+                    },
+                    {
+                      id: 'item2',
+                      title: 'How do I use these components?',
+                      content: 'Import the components from the library and use them in your React application.',
+                    },
+                    {
+                      id: 'item3',
+                      title: 'Can I customize the styles?',
+                      content: 'Yes, all components support custom styling through className props.',
+                    },
+                  ]}
+                  defaultOpen={['item1']}
+                />
+              </div>
+              
+              {/* Multiple mode */}
+              <div>
+                <p className="text-sm text-muted-foreground mb-3">Multiple mode (can open multiple at once)</p>
+                <Accordion
+                  items={[
+                    {
+                      id: 'faq1',
+                      title: 'Is it accessible?',
+                      content: 'Yes, all components follow WCAG accessibility guidelines.',
+                    },
+                    {
+                      id: 'faq2',
+                      title: 'Does it support dark mode?',
+                      content: 'Yes, the design system supports both light and dark themes.',
+                    },
+                    {
+                      id: 'faq3',
+                      title: 'Is it responsive?',
+                      content: 'Absolutely! All components are mobile-friendly and responsive.',
+                    },
+                  ]}
+                  multiple
+                  defaultOpen={['faq1', 'faq2']}
+                />
+              </div>
+            </div>
           </div>
 
           {/* SearchBar */}
