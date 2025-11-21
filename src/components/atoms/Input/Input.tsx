@@ -24,15 +24,13 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       <input
         ref={ref}
         className={cn(
-          'h-10 rounded-lg border border-input bg-card px-3 py-2 text-sm text-card-foreground shadow-sm transition-all duration-200',
-          'placeholder:text-muted-foreground',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:border-primary',
-          'hover:border-primary/50',
-          'disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:border-input',
-          (error || invalid) && 'border-destructive focus-visible:ring-destructive focus-visible:border-destructive hover:border-destructive',
+          'w-full px-3 py-2 text-[var(--font-size-base)] font-[var(--font-family-sans)] bg-background text-foreground border rounded-[var(--radius-lg)] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-0',
+          (error || invalid)
+            ? 'border-[var(--color-error-500)] focus:ring-[var(--color-error-500)] focus:border-[var(--color-error-500)]'
+            : 'border-input focus:ring-ring focus:border-ring',
+          disabled && 'bg-muted cursor-not-allowed opacity-60',
           leftIcon && 'pl-9',
           rightIcon && 'pr-9',
-          fullWidth && 'w-full',
           className
         )}
         disabled={disabled}
@@ -46,7 +44,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
     if (leftIcon || rightIcon) {
       return (
-        <div className={cn('relative inline-flex', fullWidth && 'w-full')}>
+        <div className={cn('relative', fullWidth ? 'w-full' : 'inline-flex w-full')}>
           {leftIcon && (
             <span
               className="absolute left-3 top-1/2 -translate-y-1/2 flex items-center justify-center w-4 h-4 text-muted-foreground pointer-events-none"
