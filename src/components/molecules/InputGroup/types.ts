@@ -1,5 +1,6 @@
-export interface InputGroupProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'prefix'> {
-  prefix?: React.ReactNode;
-  suffix?: React.ReactNode;
+export interface InputGroupProps {
+  leftAddon?: React.ReactNode;
+  rightAddon?: React.ReactNode;
   children: React.ReactNode;
+  className?: string;
 }
