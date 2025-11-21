@@ -3,20 +3,42 @@ import { TextareaProps } from './types';
 import { cn } from '@/lib/utils';
 
 export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ error, className, disabled, ...props }, ref) => {
+  ({ 
+    error, 
+    className, 
+    disabled,
+    invalid,
+    fullWidth = false,
+    rows = 4,
+    onChange,
+    ...props 
+  }, ref) => {
+    const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      // Call onChange with the string value for new API compatibility
+      onChange?.(e.target.value as any);
+    };
+
     return (
       <textarea
         ref={ref}
+        rows={rows}
         className={cn(
-          'w-full px-3 py-2 text-[var(--font-size-base)] font-[var(--font-family-sans)] bg-background text-foreground border rounded-[var(--radius-lg)] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-0 min-h-[80px]',
-          error
-            ? 'border-[var(--color-error-500)] focus:ring-[var(--color-error-500)] focus:border-[var(--color-error-500)]'
-            : 'border-input focus:ring-ring focus:border-ring',
-          disabled && 'bg-muted cursor-not-allowed opacity-60',
+          'rounded-lg border border-input bg-card px-3 py-2 text-sm text-card-foreground shadow-sm transition-all duration-200',
+          'placeholder:text-muted-foreground',
+          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:border-primary',
+          'hover:border-primary/50',
+          'disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:border-input',
+          'resize-y min-h-[80px]',
+          (error || invalid) && 'border-destructive focus-visible:ring-destructive focus-visible:border-destructive hover:border-destructive',
+          fullWidth && 'w-full',
           className
         )}
         disabled={disabled}
-        aria-invalid={!!error}
+        onChange={handleChange}
+        role="textbox"
+        aria-multiline="true"
+        aria-invalid={!!(error || invalid)}
+        aria-disabled={disabled}
         {...props}
       />
     );
