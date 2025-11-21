@@ -286,10 +286,40 @@ const Preview = () => {
           {/* Tag */}
           <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Tag</h3>
-            <div className="flex flex-wrap gap-2">
-              <Tag>React</Tag>
-              <Tag>TypeScript</Tag>
-              <Tag onRemove={() => alert('Tag removed')}>Removable</Tag>
+            <div className="space-y-4">
+              <div>
+                <p className="text-sm mb-2 text-muted-foreground">Variants</p>
+                <div className="flex flex-wrap gap-2">
+                  <Tag variant="primary">Primary</Tag>
+                  <Tag variant="secondary">Secondary</Tag>
+                  <Tag variant="success">Success</Tag>
+                  <Tag variant="warning">Warning</Tag>
+                  <Tag variant="danger">Danger</Tag>
+                </div>
+              </div>
+              <div>
+                <p className="text-sm mb-2 text-muted-foreground">Sizes</p>
+                <div className="flex flex-wrap gap-2 items-center">
+                  <Tag size="sm">Small</Tag>
+                  <Tag size="md">Medium</Tag>
+                  <Tag size="lg">Large</Tag>
+                </div>
+              </div>
+              <div>
+                <p className="text-sm mb-2 text-muted-foreground">Removable</p>
+                <div className="flex flex-wrap gap-2">
+                  <Tag variant="primary" removable onRemove={() => console.log('Remove primary')}>React</Tag>
+                  <Tag variant="success" removable onRemove={() => console.log('Remove success')}>TypeScript</Tag>
+                  <Tag variant="danger" size="sm" removable onRemove={() => console.log('Remove danger')}>Remove me</Tag>
+                </div>
+              </div>
+              <div>
+                <p className="text-sm mb-2 text-muted-foreground">Not Rounded</p>
+                <div className="flex flex-wrap gap-2">
+                  <Tag rounded={false}>Square Tag</Tag>
+                  <Tag variant="success" rounded={false}>Success</Tag>
+                </div>
+              </div>
             </div>
           </div>
 
