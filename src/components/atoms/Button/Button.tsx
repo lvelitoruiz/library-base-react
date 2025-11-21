@@ -9,9 +9,9 @@ const buttonVariants = {
 };
 
 const buttonSizes = {
-  sm: 'px-3 py-1.5 text-sm',
-  md: 'px-4 py-2 text-base',
-  lg: 'px-6 py-3 text-lg',
+  sm: 'h-8 px-3 text-sm',
+  md: 'h-10 px-5 text-base',
+  lg: 'h-12 px-7 text-lg',
 };
 
 export const Button: React.FC<ButtonProps> = ({
