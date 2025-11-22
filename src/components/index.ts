@@ -84,18 +84,6 @@ export type { AccordionProps, AccordionItem } from './molecules/Accordion';
 export { SearchBar } from './molecules/SearchBar';
 export type { SearchBarProps } from './molecules/SearchBar';
 
-export { StatCard } from './molecules/StatCard';
-export type { StatCardProps } from './molecules/StatCard';
-
-export { EmptyState } from './molecules/EmptyState';
-export type { EmptyStateProps } from './molecules/EmptyState';
-
-export { SimpleTable } from './molecules/SimpleTable';
-export type { SimpleTableProps } from './molecules/SimpleTable';
-
-export { Offcanvas } from './molecules/Offcanvas';
-export type { OffcanvasProps } from './molecules/Offcanvas';
-
 // Organisms
 export { Navbar } from './organisms/Navbar';
 export type { NavbarProps } from './organisms/Navbar';
@@ -133,8 +121,8 @@ export type { CardListProps } from './organisms/CardList';
 export { KpiCard } from './organisms/KpiCard';
 export type { KpiCardProps } from './organisms/KpiCard';
 
-export { EmptyState as EmptyStateOrg } from './organisms/EmptyState';
-export type { EmptyStateProps as EmptyStateOrgProps } from './organisms/EmptyState';
+export { EmptyState } from './organisms/EmptyState';
+export type { EmptyStateProps } from './organisms/EmptyState';
 
 export { UserMenu } from './organisms/UserMenu';
 export type { UserMenuProps, User, UserMenuItem } from './organisms/UserMenu';
