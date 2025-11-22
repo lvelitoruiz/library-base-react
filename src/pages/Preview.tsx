@@ -31,10 +31,6 @@ import {
   Tabs,
   Accordion,
   SearchBar,
-  StatCard,
-  EmptyState,
-  SimpleTable,
-  Offcanvas,
   // Organisms
   Navbar,
   Sidebar,
@@ -48,14 +44,13 @@ import {
   Pagination,
   CardList,
   KpiCard,
-  EmptyStateOrg,
+  EmptyState,
   UserMenu,
 } from '@/components';
 
 const Preview = () => {
   const [progress, setProgress] = useState(65);
   const [sliderValue, setSliderValue] = useState(50);
-  const [offcanvasOpen, setOffcanvasOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const [selectedRadio, setSelectedRadio] = useState('1');
   const [checkbox1, setCheckbox1] = useState(false);
@@ -1070,74 +1065,6 @@ const Preview = () => {
               )}
             </div>
           </div>
-
-          {/* StatCard */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
-            <h3 className="text-xl font-semibold mb-4 text-foreground">StatCard</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <StatCard
-                title="Total Users"
-                value="1,234"
-                description="Active users this month"
-                trend={{ direction: 'up', value: '+12.5%' }}
-              />
-              <StatCard
-                title="Revenue"
-                value="$12,345"
-                description="Total revenue"
-                trend={{ direction: 'up', value: '+8.2%' }}
-              />
-              <StatCard
-                title="Orders"
-                value="456"
-                description="Orders this week"
-                trend={{ direction: 'down', value: '-3.1%' }}
-              />
-            </div>
-          </div>
-
-          {/* EmptyState */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
-            <h3 className="text-xl font-semibold mb-4 text-foreground">EmptyState</h3>
-            <EmptyState
-              icon={
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
-                  <path d="M12 8v4M12 16h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                </svg>
-              }
-              title="No data found"
-              description="There are no items to display at the moment. Try adding some content."
-              action={<Button size="sm">Add Item</Button>}
-            />
-          </div>
-
-          {/* SimpleTable */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
-            <h3 className="text-xl font-semibold mb-4 text-foreground">SimpleTable</h3>
-            <SimpleTable
-              headers={['Name', 'Email', 'Role', 'Status']}
-              rows={[
-                ['John Doe', 'john@example.com', 'Admin', 'Active'],
-                ['Jane Smith', 'jane@example.com', 'User', 'Active'],
-                ['Bob Johnson', 'bob@example.com', 'User', 'Inactive'],
-              ]}
-            />
-          </div>
-
-          {/* Offcanvas */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
-            <h3 className="text-xl font-semibold mb-4 text-foreground">Offcanvas</h3>
-            <Button onClick={() => setOffcanvasOpen(true)}>Open Offcanvas</Button>
-            <Offcanvas
-              isOpen={offcanvasOpen}
-              onClose={() => setOffcanvasOpen(false)}
-              title="Offcanvas Title"
-              position="right"
-            >
-              <p className="text-foreground">This is the offcanvas content.</p>
-            </Offcanvas>
-          </div>
         </section>
 
         {/* ORGANISMS SECTION */}
@@ -2030,16 +1957,16 @@ const Preview = () => {
               <div>
                 <p className="text-sm mb-4 text-muted-foreground">Simple (Title only)</p>
                 <div className="border border-border rounded-md bg-card">
-                  <EmptyStateOrg
-                    title="No results found"
-                  />
+                <EmptyState
+                  title="No results found"
+                />
                 </div>
               </div>
 
               <div>
                 <p className="text-sm mb-4 text-muted-foreground">With Icon and Description</p>
                 <div className="border border-border rounded-md bg-card">
-                  <EmptyStateOrg
+                  <EmptyState
                     title="No messages yet"
                     description="When you receive messages, they will appear here. Start a conversation to get started."
                     icon={
@@ -2054,7 +1981,7 @@ const Preview = () => {
               <div>
                 <p className="text-sm mb-4 text-muted-foreground">With Icon, Description, and Action</p>
                 <div className="border border-border rounded-md bg-card">
-                  <EmptyStateOrg
+                  <EmptyState
                     title="No data available"
                     description="There are no items to display at the moment. Create your first item to get started with your collection."
                     icon={
@@ -2074,7 +2001,7 @@ const Preview = () => {
               <div>
                 <p className="text-sm mb-4 text-muted-foreground">Search Results Empty State</p>
                 <div className="border border-border rounded-md bg-card">
-                  <EmptyStateOrg
+                  <EmptyState
                     title="No search results"
                     description="We couldn't find any results matching your search criteria. Try adjusting your filters or search terms."
                     icon={
