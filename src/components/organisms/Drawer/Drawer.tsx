@@ -32,8 +32,8 @@ export const Drawer: React.FC<DrawerProps> = ({
     };
   }, [open, onClose]);
 
-  // Don't render if not open
-  if (!open) return null;
+  // Always render for animation, but hide with pointer-events-none when closed
+  const isVisible = open;
 
   // Size classes (only for left/right positions)
   const sizeClasses = {
@@ -71,7 +71,7 @@ export const Drawer: React.FC<DrawerProps> = ({
         className={cn(
           'fixed inset-0 bg-black/40 backdrop-blur-sm z-40',
           'transition-opacity duration-300',
-          open ? 'opacity-100' : 'opacity-0'
+          isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
         )}
         onClick={onClose}
         aria-hidden="true"
@@ -90,12 +90,13 @@ export const Drawer: React.FC<DrawerProps> = ({
           'overflow-y-auto',
           'flex flex-col',
           positionClasses[position],
-          open ? 'translate-x-0 translate-y-0' : (
+          isVisible ? 'translate-x-0 translate-y-0' : (
             position === 'right' ? 'translate-x-full' :
             position === 'left' ? '-translate-x-full' :
             position === 'top' ? '-translate-y-full' :
             'translate-y-full'
           ),
+          !isVisible && 'pointer-events-none',
           className
         )}
       >
