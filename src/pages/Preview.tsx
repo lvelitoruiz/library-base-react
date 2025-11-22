@@ -45,6 +45,7 @@ import {
   Modal,
   Drawer,
   Table,
+  Pagination,
 } from '@/components';
 
 const Preview = () => {
@@ -65,6 +66,9 @@ const Preview = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [drawerPosition, setDrawerPosition] = useState<"left" | "right" | "top" | "bottom">("right");
+  const [currentPage1, setCurrentPage1] = useState(2);
+  const [currentPage2, setCurrentPage2] = useState(1);
+  const [currentPage3, setCurrentPage3] = useState(5);
 
   const toggleTheme = () => {
     const newTheme = !isDark;
@@ -1644,6 +1648,57 @@ const Preview = () => {
                     { id: '#1002', customer: 'Kyle Reese', total: '$149.50', date: '2024-01-16' },
                     { id: '#1003', customer: 'John Connor', total: '$499.00', date: '2024-01-17' },
                   ]}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Pagination */}
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Pagination</h3>
+            <div className="space-y-8">
+              <div>
+                <p className="text-sm mb-4 text-muted-foreground">Normal Pagination (page 2 of 5)</p>
+                <Pagination
+                  page={currentPage1}
+                  totalPages={5}
+                  onChange={setCurrentPage1}
+                />
+                <p className="text-xs text-center mt-2 text-muted-foreground">
+                  Current page: {currentPage1}
+                </p>
+              </div>
+
+              <div>
+                <p className="text-sm mb-4 text-muted-foreground">First Page (Prev disabled)</p>
+                <Pagination
+                  page={currentPage2}
+                  totalPages={10}
+                  onChange={setCurrentPage2}
+                />
+                <p className="text-xs text-center mt-2 text-muted-foreground">
+                  Current page: {currentPage2}
+                </p>
+              </div>
+
+              <div>
+                <p className="text-sm mb-4 text-muted-foreground">Last Page (Next disabled)</p>
+                <Pagination
+                  page={currentPage3}
+                  totalPages={5}
+                  onChange={setCurrentPage3}
+                />
+                <p className="text-xs text-center mt-2 text-muted-foreground">
+                  Current page: {currentPage3}
+                </p>
+              </div>
+
+              <div>
+                <p className="text-sm mb-4 text-muted-foreground">Small Pagination (3 pages)</p>
+                <Pagination
+                  page={1}
+                  totalPages={3}
+                  onChange={(page) => console.log('Page changed:', page)}
                 />
               </div>
             </div>
