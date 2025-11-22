@@ -132,3 +132,6 @@ export type { CardListProps } from './organisms/CardList';
 
 export { KpiCard } from './organisms/KpiCard';
 export type { KpiCardProps } from './organisms/KpiCard';
+
+export { EmptyState as EmptyStateOrg } from './organisms/EmptyState';
+export type { EmptyStateProps as EmptyStateOrgProps } from './organisms/EmptyState';

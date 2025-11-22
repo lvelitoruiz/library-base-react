@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Heart, Star, Settings, User, Bell, Home, Info, CheckCircle, AlertTriangle, XCircle, Folder, Users, LogOut, TrendingUp, DollarSign, ShoppingCart, Activity } from 'lucide-react';
+import { Heart, Star, Settings, User, Bell, Home, Info, CheckCircle, AlertTriangle, XCircle, Folder, Users, LogOut, TrendingUp, DollarSign, ShoppingCart, Activity, Inbox, FileX, Search } from 'lucide-react';
 import {
   // Atoms
   Button,
@@ -48,6 +48,7 @@ import {
   Pagination,
   CardList,
   KpiCard,
+  EmptyStateOrg,
 } from '@/components';
 
 const Preview = () => {
@@ -2015,6 +2016,81 @@ const Preview = () => {
                   <KpiCard
                     label="Shares"
                     value="892"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* EmptyState (Organisms) */}
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">EmptyState (Organisms)</h3>
+            <div className="space-y-8">
+              <div>
+                <p className="text-sm mb-4 text-muted-foreground">Simple (Title only)</p>
+                <div className="border border-border rounded-md bg-card">
+                  <EmptyStateOrg
+                    title="No results found"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <p className="text-sm mb-4 text-muted-foreground">With Icon and Description</p>
+                <div className="border border-border rounded-md bg-card">
+                  <EmptyStateOrg
+                    title="No messages yet"
+                    description="When you receive messages, they will appear here. Start a conversation to get started."
+                    icon={
+                      <Icon size={48}>
+                        <Inbox className="w-full h-full" />
+                      </Icon>
+                    }
+                  />
+                </div>
+              </div>
+
+              <div>
+                <p className="text-sm mb-4 text-muted-foreground">With Icon, Description, and Action</p>
+                <div className="border border-border rounded-md bg-card">
+                  <EmptyStateOrg
+                    title="No data available"
+                    description="There are no items to display at the moment. Create your first item to get started with your collection."
+                    icon={
+                      <Icon size={48}>
+                        <FileX className="w-full h-full" />
+                      </Icon>
+                    }
+                    action={
+                      <Button variant="primary" size="md">
+                        Create New Item
+                      </Button>
+                    }
+                  />
+                </div>
+              </div>
+
+              <div>
+                <p className="text-sm mb-4 text-muted-foreground">Search Results Empty State</p>
+                <div className="border border-border rounded-md bg-card">
+                  <EmptyStateOrg
+                    title="No search results"
+                    description="We couldn't find any results matching your search criteria. Try adjusting your filters or search terms."
+                    icon={
+                      <Icon size={48}>
+                        <Search className="w-full h-full" />
+                      </Icon>
+                    }
+                    action={
+                      <div className="flex gap-2">
+                        <Button variant="ghost" size="sm">
+                          Clear Filters
+                        </Button>
+                        <Button variant="primary" size="sm">
+                          Reset Search
+                        </Button>
+                      </div>
+                    }
                   />
                 </div>
               </div>
