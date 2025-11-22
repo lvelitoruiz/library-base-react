@@ -114,3 +114,6 @@ export type { ToolbarProps } from './organisms/Toolbar';
 
 export { ListGroup } from './organisms/ListGroup';
 export type { ListGroupProps } from './organisms/ListGroup';
+
+export { Modal } from './organisms/Modal';
+export type { ModalProps } from './organisms/Modal';
