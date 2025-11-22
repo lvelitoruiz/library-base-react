@@ -18,7 +18,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         'flex flex-col',
         'bg-[hsl(var(--card))]',
         'border-r border-[hsl(var(--border))]',
-        'h-screen',
+        'h-full',
         'transition-all duration-300',
         'overflow-hidden',
         collapsed ? 'w-20' : 'w-60',
