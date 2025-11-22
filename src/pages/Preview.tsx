@@ -46,6 +46,7 @@ import {
   Drawer,
   Table,
   Pagination,
+  CardList,
 } from '@/components';
 
 const Preview = () => {
@@ -1699,6 +1700,162 @@ const Preview = () => {
                   page={1}
                   totalPages={3}
                   onChange={(page) => console.log('Page changed:', page)}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* CardList */}
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">CardList</h3>
+            <div className="space-y-8">
+              <div>
+                <p className="text-sm mb-4 text-muted-foreground">3 Columns Grid (Desktop)</p>
+                <CardList
+                  cols={3}
+                  gap={4}
+                  items={[
+                    <Card
+                      title="Feature 1"
+                      description="This is a description for feature 1"
+                      padding="md"
+                      shadow="sm"
+                    >
+                      <p className="text-sm text-muted-foreground">
+                        Content for card 1. This demonstrates a 3-column grid layout.
+                      </p>
+                    </Card>,
+                    <Card
+                      title="Feature 2"
+                      description="This is a description for feature 2"
+                      padding="md"
+                      shadow="sm"
+                    >
+                      <p className="text-sm text-muted-foreground">
+                        Content for card 2. On mobile, cards stack vertically.
+                      </p>
+                    </Card>,
+                    <Card
+                      title="Feature 3"
+                      description="This is a description for feature 3"
+                      padding="md"
+                      shadow="sm"
+                    >
+                      <p className="text-sm text-muted-foreground">
+                        Content for card 3. On tablets, 2 columns are shown.
+                      </p>
+                    </Card>,
+                    <Card
+                      title="Feature 4"
+                      description="This is a description for feature 4"
+                      padding="md"
+                      shadow="sm"
+                    >
+                      <p className="text-sm text-muted-foreground">
+                        Content for card 4. Grid is fully responsive.
+                      </p>
+                    </Card>,
+                    <Card
+                      title="Feature 5"
+                      description="This is a description for feature 5"
+                      padding="md"
+                      shadow="sm"
+                    >
+                      <p className="text-sm text-muted-foreground">
+                        Content for card 5. Uses gap spacing from props.
+                      </p>
+                    </Card>,
+                    <Card
+                      title="Feature 6"
+                      description="This is a description for feature 6"
+                      padding="md"
+                      shadow="sm"
+                    >
+                      <p className="text-sm text-muted-foreground">
+                        Content for card 6. Perfect for feature grids.
+                      </p>
+                    </Card>,
+                  ]}
+                />
+              </div>
+
+              <div>
+                <p className="text-sm mb-4 text-muted-foreground">4 Columns Grid with Larger Gap</p>
+                <CardList
+                  cols={4}
+                  gap={6}
+                  items={[
+                    <Card padding="md" shadow="sm">
+                      <div className="flex items-center gap-3">
+                        <Icon size={24}>
+                          <Star className="w-full h-full text-primary" />
+                        </Icon>
+                        <div>
+                          <h4 className="font-semibold text-foreground">Rating</h4>
+                          <p className="text-sm text-muted-foreground">4.9/5.0</p>
+                        </div>
+                      </div>
+                    </Card>,
+                    <Card padding="md" shadow="sm">
+                      <div className="flex items-center gap-3">
+                        <Icon size={24}>
+                          <User className="w-full h-full text-primary" />
+                        </Icon>
+                        <div>
+                          <h4 className="font-semibold text-foreground">Users</h4>
+                          <p className="text-sm text-muted-foreground">10,000+</p>
+                        </div>
+                      </div>
+                    </Card>,
+                    <Card padding="md" shadow="sm">
+                      <div className="flex items-center gap-3">
+                        <Icon size={24}>
+                          <Heart className="w-full h-full text-primary" />
+                        </Icon>
+                        <div>
+                          <h4 className="font-semibold text-foreground">Reviews</h4>
+                          <p className="text-sm text-muted-foreground">5,000+</p>
+                        </div>
+                      </div>
+                    </Card>,
+                    <Card padding="md" shadow="sm">
+                      <div className="flex items-center gap-3">
+                        <Icon size={24}>
+                          <Settings className="w-full h-full text-primary" />
+                        </Icon>
+                        <div>
+                          <h4 className="font-semibold text-foreground">Features</h4>
+                          <p className="text-sm text-muted-foreground">50+</p>
+                        </div>
+                      </div>
+                    </Card>,
+                  ]}
+                />
+              </div>
+
+              <div>
+                <p className="text-sm mb-4 text-muted-foreground">2 Columns Grid</p>
+                <CardList
+                  cols={2}
+                  gap={4}
+                  items={[
+                    <Card
+                      title="Option A"
+                      description="Choose this for basic features"
+                      padding="lg"
+                      shadow="md"
+                    >
+                      <Button variant="primary" size="sm">Select</Button>
+                    </Card>,
+                    <Card
+                      title="Option B"
+                      description="Choose this for advanced features"
+                      padding="lg"
+                      shadow="md"
+                    >
+                      <Button variant="primary" size="sm">Select</Button>
+                    </Card>,
+                  ]}
                 />
               </div>
             </div>
