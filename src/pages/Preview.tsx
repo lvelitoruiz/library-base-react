@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Heart, Star, Settings, User, Bell, Home, Info, CheckCircle, AlertTriangle, XCircle } from 'lucide-react';
+import { Heart, Star, Settings, User, Bell, Home, Info, CheckCircle, AlertTriangle, XCircle, Folder, Users, LogOut } from 'lucide-react';
 import {
   // Atoms
   Button,
@@ -1198,22 +1198,99 @@ const Preview = () => {
           {/* Sidebar */}
           <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Sidebar</h3>
-            <div className="flex gap-4 h-64">
-              <Sidebar isOpen={true}>
-                <nav className="space-y-2">
-                  <a href="#" className="block px-3 py-2 rounded hover:bg-muted text-foreground">
-                    Dashboard
-                  </a>
-                  <a href="#" className="block px-3 py-2 rounded hover:bg-muted text-foreground">
-                    Projects
-                  </a>
-                  <a href="#" className="block px-3 py-2 rounded hover:bg-muted text-foreground">
-                    Team
-                  </a>
-                </nav>
-              </Sidebar>
+            
+            {/* Expanded Sidebar */}
+            <div className="flex gap-4 h-96 mb-4">
+              <Sidebar
+                header={
+                  <div className="flex items-center gap-2">
+                    <Icon size={24}>
+                      <Home className="w-full h-full text-primary" />
+                    </Icon>
+                    <span className="text-base font-bold text-foreground">My App</span>
+                  </div>
+                }
+                items={[
+                  {
+                    id: 'dashboard',
+                    label: 'Dashboard',
+                    icon: <Icon size={20}><Home className="w-full h-full" /></Icon>,
+                    href: '#dashboard'
+                  },
+                  {
+                    id: 'projects',
+                    label: 'Projects',
+                    icon: <Icon size={20}><Folder className="w-full h-full" /></Icon>,
+                    href: '#projects'
+                  },
+                  {
+                    id: 'team',
+                    label: 'Team',
+                    icon: <Icon size={20}><Users className="w-full h-full" /></Icon>,
+                    href: '#team'
+                  },
+                  {
+                    id: 'settings',
+                    label: 'Settings',
+                    icon: <Icon size={20}><Settings className="w-full h-full" /></Icon>,
+                    href: '#settings'
+                  }
+                ]}
+                footer={
+                  <Button variant="ghost" size="sm" fullWidth>
+                    <Icon size={16}><LogOut className="w-full h-full" /></Icon>
+                    <span className="ml-2">Logout</span>
+                  </Button>
+                }
+              />
               <div className="flex-1 p-4 bg-muted rounded">
-                <p className="text-foreground">Main content area</p>
+                <p className="text-foreground">Main content area (expanded sidebar)</p>
+              </div>
+            </div>
+
+            {/* Collapsed Sidebar */}
+            <div className="flex gap-4 h-96">
+              <Sidebar
+                collapsed={true}
+                header={
+                  <Icon size={24}>
+                    <Home className="w-full h-full text-primary" />
+                  </Icon>
+                }
+                items={[
+                  {
+                    id: 'dashboard',
+                    label: 'Dashboard',
+                    icon: <Icon size={20}><Home className="w-full h-full" /></Icon>,
+                    href: '#dashboard'
+                  },
+                  {
+                    id: 'projects',
+                    label: 'Projects',
+                    icon: <Icon size={20}><Folder className="w-full h-full" /></Icon>,
+                    href: '#projects'
+                  },
+                  {
+                    id: 'team',
+                    label: 'Team',
+                    icon: <Icon size={20}><Users className="w-full h-full" /></Icon>,
+                    href: '#team'
+                  },
+                  {
+                    id: 'settings',
+                    label: 'Settings',
+                    icon: <Icon size={20}><Settings className="w-full h-full" /></Icon>,
+                    href: '#settings'
+                  }
+                ]}
+                footer={
+                  <Icon size={20}>
+                    <LogOut className="w-full h-full" />
+                  </Icon>
+                }
+              />
+              <div className="flex-1 p-4 bg-muted rounded">
+                <p className="text-foreground">Main content area (collapsed sidebar)</p>
               </div>
             </div>
           </div>
