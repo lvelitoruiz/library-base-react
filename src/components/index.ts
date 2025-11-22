@@ -126,3 +126,6 @@ export type { TableProps, TableColumn } from './organisms/Table';
 
 export { Pagination } from './organisms/Pagination';
 export type { PaginationProps } from './organisms/Pagination';
+
+export { CardList } from './organisms/CardList';
+export type { CardListProps } from './organisms/CardList';
