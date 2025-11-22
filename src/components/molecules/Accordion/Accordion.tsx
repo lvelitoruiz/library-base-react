@@ -52,10 +52,10 @@ export const Accordion: React.FC<AccordionProps> = ({
                 'w-full flex justify-between items-center',
                 'px-4 py-3',
                 'cursor-pointer',
-                'font-medium text-[hsl(var(--foreground))]',
-                'hover:bg-[hsl(var(--accent))]',
+                'font-medium text-foreground',
+                'bg-card hover:bg-muted/50',
                 'transition-colors duration-200',
-                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2'
+                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'
               )}
             >
               <span>{item.title}</span>

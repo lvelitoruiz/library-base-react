@@ -63,6 +63,9 @@ const Preview = () => {
   const [switch3, setSwitch3] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
+  const [modalSmOpen, setModalSmOpen] = useState(false);
+  const [modalMdOpen, setModalMdOpen] = useState(false);
+  const [modalLgOpen, setModalLgOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [drawerPosition, setDrawerPosition] = useState<"left" | "right" | "top" | "bottom">("right");
   const [currentPage1, setCurrentPage1] = useState(2);
@@ -178,7 +181,7 @@ const Preview = () => {
           {/* Checkbox */}
           <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Checkbox</h3>
-            <div className="space-y-2">
+            <div className="space-y-3">
               <Checkbox 
                 checked={checkbox1} 
                 onChange={setCheckbox1}
@@ -201,7 +204,7 @@ const Preview = () => {
           {/* Radio */}
           <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Radio</h3>
-            <div className="space-y-2">
+            <div className="space-y-3">
               <Radio 
                 name="option" 
                 label="Option 1" 
@@ -229,7 +232,7 @@ const Preview = () => {
           {/* Switch */}
           <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Switch</h3>
-            <div className="space-y-2">
+            <div className="space-y-3">
               <Switch 
                 checked={switch1}
                 onChange={setSwitch1}
@@ -1443,17 +1446,77 @@ const Preview = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
                   <p className="text-sm mb-2 text-muted-foreground">Small Modal</p>
-                  <Button size="sm" onClick={() => setModalOpen(true)}>Small</Button>
+                  <Button size="sm" onClick={() => setModalSmOpen(true)}>Small</Button>
                 </div>
                 <div>
                   <p className="text-sm mb-2 text-muted-foreground">Medium Modal (Default)</p>
-                  <Button size="sm" onClick={() => setModalOpen(true)}>Medium</Button>
+                  <Button size="sm" onClick={() => setModalMdOpen(true)}>Medium</Button>
                 </div>
                 <div>
                   <p className="text-sm mb-2 text-muted-foreground">Large Modal</p>
-                  <Button size="sm" onClick={() => setModalOpen(true)}>Large</Button>
+                  <Button size="sm" onClick={() => setModalLgOpen(true)}>Large</Button>
                 </div>
               </div>
+              
+              {/* Small Modal */}
+              <Modal
+                open={modalSmOpen}
+                onClose={() => setModalSmOpen(false)}
+                title="Small Modal"
+                size="sm"
+                footer={
+                  <>
+                    <Button variant="ghost" size="sm" onClick={() => setModalSmOpen(false)}>
+                      Cancel
+                    </Button>
+                    <Button variant="primary" size="sm" onClick={() => setModalSmOpen(false)}>
+                      Confirm
+                    </Button>
+                  </>
+                }
+              >
+                <p className="text-foreground">This is a small modal.</p>
+              </Modal>
+              
+              {/* Medium Modal */}
+              <Modal
+                open={modalMdOpen}
+                onClose={() => setModalMdOpen(false)}
+                title="Medium Modal"
+                size="md"
+                footer={
+                  <>
+                    <Button variant="ghost" size="md" onClick={() => setModalMdOpen(false)}>
+                      Cancel
+                    </Button>
+                    <Button variant="primary" size="md" onClick={() => setModalMdOpen(false)}>
+                      Confirm
+                    </Button>
+                  </>
+                }
+              >
+                <p className="text-foreground">This is a medium modal (default size).</p>
+              </Modal>
+              
+              {/* Large Modal */}
+              <Modal
+                open={modalLgOpen}
+                onClose={() => setModalLgOpen(false)}
+                title="Large Modal"
+                size="lg"
+                footer={
+                  <>
+                    <Button variant="ghost" size="md" onClick={() => setModalLgOpen(false)}>
+                      Cancel
+                    </Button>
+                    <Button variant="primary" size="md" onClick={() => setModalLgOpen(false)}>
+                      Confirm
+                    </Button>
+                  </>
+                }
+              >
+                <p className="text-foreground">This is a large modal with more space for content.</p>
+              </Modal>
             </div>
           </div>
 

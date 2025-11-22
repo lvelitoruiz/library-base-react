@@ -31,12 +31,12 @@ export const SearchBar: React.FC<SearchBarProps> = ({
       role="search"
       className={cn(
         'w-full flex items-center gap-x-2',
-        'px-3 py-2',
-        'rounded-lg',
-        'bg-[hsl(var(--card))]',
-        'border border-[hsl(var(--border))]',
-        'transition-colors duration-200',
-        isFocused && 'border-[hsl(var(--primary))] ring-2 ring-[hsl(var(--ring))] ring-opacity-20',
+        'px-3 py-2.5',
+        'rounded-[var(--radius-lg)]',
+        'bg-card',
+        'border border-input',
+        'transition-all duration-200',
+        isFocused && 'border-ring ring-2 ring-ring/20',
         className
       )}
     >
