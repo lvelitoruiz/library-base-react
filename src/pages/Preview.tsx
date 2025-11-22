@@ -129,7 +129,7 @@ const Preview = () => {
           <h2 className="text-3xl font-bold mb-6 text-foreground">Atoms</h2>
           
           {/* Button */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Button</h3>
             <div className="flex flex-wrap gap-4">
               <Button variant="primary" size="sm">Primary Small</Button>
@@ -143,7 +143,7 @@ const Preview = () => {
           </div>
 
           {/* Input */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Input</h3>
             <div className="space-y-4 max-w-md">
               <Input placeholder="Normal input" />
@@ -153,7 +153,7 @@ const Preview = () => {
           </div>
 
           {/* Textarea */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Textarea</h3>
             <div className="space-y-4 max-w-md">
               <Textarea placeholder="Enter your message..." />
@@ -162,7 +162,7 @@ const Preview = () => {
           </div>
 
           {/* Select */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Select</h3>
             <div className="space-y-4 max-w-md">
               <Select
@@ -176,7 +176,7 @@ const Preview = () => {
           </div>
 
           {/* Checkbox */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Checkbox</h3>
             <div className="space-y-2">
               <Checkbox 
@@ -199,7 +199,7 @@ const Preview = () => {
           </div>
 
           {/* Radio */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Radio</h3>
             <div className="space-y-2">
               <Radio 
@@ -227,7 +227,7 @@ const Preview = () => {
           </div>
 
           {/* Switch */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Switch</h3>
             <div className="space-y-2">
               <Switch 
@@ -250,7 +250,7 @@ const Preview = () => {
           </div>
 
           {/* Slider */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Slider</h3>
             <div className="max-w-md space-y-4">
               <div>
@@ -264,7 +264,7 @@ const Preview = () => {
           </div>
 
           {/* Badge */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Badge</h3>
             <div className="space-y-4">
               <div>
@@ -297,7 +297,7 @@ const Preview = () => {
           </div>
 
           {/* Tag */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Tag</h3>
             <div className="space-y-4">
               <div>
@@ -337,7 +337,7 @@ const Preview = () => {
           </div>
 
           {/* Progress */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Progress</h3>
             <div className="space-y-6">
               <div className="max-w-md space-y-4">
@@ -379,7 +379,7 @@ const Preview = () => {
           </div>
 
           {/* Avatar */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Avatar</h3>
             <div className="space-y-6">
               <div>
@@ -428,7 +428,7 @@ const Preview = () => {
           </div>
 
           {/* Icon */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Icon</h3>
             <div className="space-y-6">
               <div>
@@ -502,7 +502,7 @@ const Preview = () => {
           </div>
 
           {/* Skeleton */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Skeleton</h3>
             <div className="space-y-4 max-w-md">
               <Skeleton width="100%" height="20px" />
@@ -513,7 +513,7 @@ const Preview = () => {
           </div>
 
           {/* Spinner */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Spinner</h3>
             <div className="flex items-center gap-4">
               <Spinner size="sm" />
@@ -523,7 +523,7 @@ const Preview = () => {
           </div>
 
           {/* Divider */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Divider</h3>
             <div className="space-y-4">
               <div>
@@ -539,7 +539,7 @@ const Preview = () => {
           </div>
 
           {/* Chip */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Chip</h3>
             <div className="flex flex-wrap gap-2">
               <Chip label="Default" />
@@ -551,7 +551,7 @@ const Preview = () => {
           </div>
 
           {/* KBD */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">KBD</h3>
             <div className="flex items-center gap-2 flex-wrap">
               <p className="text-foreground">Press</p>
@@ -568,7 +568,7 @@ const Preview = () => {
           <h2 className="text-3xl font-bold mb-6 text-foreground">Molecules</h2>
 
           {/* FormField */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">FormField</h3>
             <div className="max-w-md space-y-4">
               <div>
@@ -647,7 +647,7 @@ const Preview = () => {
           </div>
 
           {/* Card */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Card</h3>
             <div className="space-y-6">
               <div>
@@ -795,7 +795,7 @@ const Preview = () => {
           </div>
 
           {/* Dropdown */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Dropdown</h3>
             <div className="flex gap-4">
               <Dropdown
@@ -830,7 +830,7 @@ const Preview = () => {
           </div>
 
           {/* InputGroup */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">InputGroup</h3>
             <div className="max-w-md space-y-4">
               <InputGroup leftAddon={
@@ -862,7 +862,7 @@ const Preview = () => {
           </div>
 
           {/* Alert */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Alert</h3>
             <div className="space-y-4">
               <Alert 
@@ -895,7 +895,7 @@ const Preview = () => {
           </div>
 
           {/* Breadcrumbs */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Breadcrumbs</h3>
             <div className="space-y-4">
               {/* Default separator */}
@@ -929,7 +929,7 @@ const Preview = () => {
           </div>
 
           {/* Tabs */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Tabs</h3>
             <div className="space-y-6">
               {/* Default tabs */}
@@ -976,7 +976,7 @@ const Preview = () => {
           </div>
 
           {/* Accordion */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Accordion</h3>
             <div className="space-y-6">
               {/* Single mode (default) */}
@@ -1033,7 +1033,7 @@ const Preview = () => {
           </div>
 
           {/* SearchBar */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">SearchBar</h3>
             <div className="space-y-4 max-w-md">
               {/* Default SearchBar with clear button */}
@@ -1137,7 +1137,7 @@ const Preview = () => {
           </div>
 
           {/* Sidebar */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Sidebar</h3>
             
             {/* Expanded Sidebar */}
@@ -1257,7 +1257,7 @@ const Preview = () => {
           </div>
 
           {/* Toolbar */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Toolbar</h3>
             <Toolbar>
               <Button size="sm" variant="ghost">Bold</Button>
@@ -1269,7 +1269,7 @@ const Preview = () => {
           </div>
 
           {/* ListItem */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">ListItem</h3>
             <div className="space-y-2 max-w-md">
               <ListItem 
@@ -1332,7 +1332,7 @@ const Preview = () => {
           </div>
 
           {/* ListGroup with ListItem */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">ListGroup & ListItem</h3>
             <ListGroup>
               <ListItem 
@@ -1382,7 +1382,7 @@ const Preview = () => {
           </div>
 
           {/* Modal */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Modal</h3>
             <div className="space-y-4">
               <div>
@@ -1436,7 +1436,7 @@ const Preview = () => {
           </div>
 
           {/* Drawer */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Drawer (Offcanvas)</h3>
             <div className="space-y-4">
               <div>
@@ -1529,7 +1529,7 @@ const Preview = () => {
           </div>
 
           {/* Table */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Table</h3>
             <div className="space-y-6">
               <div>
@@ -1585,7 +1585,7 @@ const Preview = () => {
           </div>
 
           {/* Pagination */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Pagination</h3>
             <div className="space-y-8">
               <div>
@@ -1636,7 +1636,7 @@ const Preview = () => {
           </div>
 
           {/* CardList */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">CardList</h3>
             <div className="space-y-8">
               <div>
@@ -1792,7 +1792,7 @@ const Preview = () => {
           </div>
 
           {/* KpiCard */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">KpiCard (StatCard)</h3>
             <div className="space-y-6">
               <div>
@@ -1951,7 +1951,7 @@ const Preview = () => {
           </div>
 
           {/* EmptyState (Organisms) */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">EmptyState (Organisms)</h3>
             <div className="space-y-8">
               <div>
@@ -2026,7 +2026,7 @@ const Preview = () => {
           </div>
 
           {/* UserMenu */}
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">UserMenu</h3>
             <div className="space-y-8">
               <div>
