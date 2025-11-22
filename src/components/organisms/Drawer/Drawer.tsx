@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DrawerProps } from './types';
 import { cn } from '@/lib/utils';
 import { X } from 'lucide-react';
@@ -15,6 +15,22 @@ export const Drawer: React.FC<DrawerProps> = ({
   size = "md",
   className
 }) => {
+  // State to handle animation on mount
+  const [isAnimated, setIsAnimated] = useState(false);
+
+  // Trigger animation after mount to ensure transition works
+  useEffect(() => {
+    if (open) {
+      // Small delay to ensure the drawer mounts in closed position first
+      const timer = setTimeout(() => {
+        setIsAnimated(true);
+      }, 10);
+      return () => clearTimeout(timer);
+    } else {
+      setIsAnimated(false);
+    }
+  }, [open, position]); // Include position to reset animation on position change
+
   // Handle escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -31,9 +47,6 @@ export const Drawer: React.FC<DrawerProps> = ({
       document.removeEventListener('keydown', handleEscape);
     };
   }, [open, onClose]);
-
-  // Always render for animation, but hide with pointer-events-none when closed
-  const isVisible = open;
 
   // Size classes (only for left/right positions)
   const sizeClasses = {
@@ -71,7 +84,7 @@ export const Drawer: React.FC<DrawerProps> = ({
         className={cn(
           'fixed inset-0 bg-black/40 backdrop-blur-sm z-40',
           'transition-opacity duration-300',
-          isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          open ? 'opacity-100' : 'opacity-0 pointer-events-none'
         )}
         onClick={onClose}
         aria-hidden="true"
@@ -82,6 +95,7 @@ export const Drawer: React.FC<DrawerProps> = ({
         role="dialog"
         aria-modal="true"
         aria-labelledby={title ? 'drawer-title' : undefined}
+        key={`drawer-${position}`}
         className={cn(
           'fixed z-50',
           'bg-[hsl(var(--card))]',
@@ -90,13 +104,13 @@ export const Drawer: React.FC<DrawerProps> = ({
           'overflow-y-auto',
           'flex flex-col',
           positionClasses[position],
-          isVisible ? 'translate-x-0 translate-y-0' : (
+          isAnimated ? 'translate-x-0 translate-y-0' : (
             position === 'right' ? 'translate-x-full' :
             position === 'left' ? '-translate-x-full' :
             position === 'top' ? '-translate-y-full' :
             'translate-y-full'
           ),
-          !isVisible && 'pointer-events-none',
+          !open && 'pointer-events-none',
           className
         )}
       >
