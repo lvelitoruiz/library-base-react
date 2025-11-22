@@ -135,3 +135,6 @@ export type { KpiCardProps } from './organisms/KpiCard';
 
 export { EmptyState as EmptyStateOrg } from './organisms/EmptyState';
 export type { EmptyStateProps as EmptyStateOrgProps } from './organisms/EmptyState';
+
+export { UserMenu } from './organisms/UserMenu';
+export type { UserMenuProps, User, UserMenuItem } from './organisms/UserMenu';
