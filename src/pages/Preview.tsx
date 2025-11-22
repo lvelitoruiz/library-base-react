@@ -126,10 +126,10 @@ const Preview = () => {
         
         {/* ATOMS SECTION */}
         <section>
-          <h2 className="text-3xl font-bold mb-6 text-foreground">Atoms</h2>
+          <h2 className="text-3xl font-bold mb-8 text-foreground">Atoms</h2>
           
           {/* Button */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Button</h3>
             <div className="flex flex-wrap gap-4">
               <Button variant="primary" size="sm">Primary Small</Button>
@@ -143,7 +143,7 @@ const Preview = () => {
           </div>
 
           {/* Input */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Input</h3>
             <div className="space-y-4 max-w-md">
               <Input placeholder="Normal input" />
@@ -153,7 +153,7 @@ const Preview = () => {
           </div>
 
           {/* Textarea */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Textarea</h3>
             <div className="space-y-4 max-w-md">
               <Textarea placeholder="Enter your message..." />
@@ -162,7 +162,7 @@ const Preview = () => {
           </div>
 
           {/* Select */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Select</h3>
             <div className="space-y-4 max-w-md">
               <Select
@@ -176,7 +176,7 @@ const Preview = () => {
           </div>
 
           {/* Checkbox */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Checkbox</h3>
             <div className="space-y-2">
               <Checkbox 
@@ -199,7 +199,7 @@ const Preview = () => {
           </div>
 
           {/* Radio */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Radio</h3>
             <div className="space-y-2">
               <Radio 
@@ -227,7 +227,7 @@ const Preview = () => {
           </div>
 
           {/* Switch */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Switch</h3>
             <div className="space-y-2">
               <Switch 
@@ -250,7 +250,7 @@ const Preview = () => {
           </div>
 
           {/* Slider */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Slider</h3>
             <div className="max-w-md space-y-4">
               <div>
@@ -264,7 +264,7 @@ const Preview = () => {
           </div>
 
           {/* Badge */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Badge</h3>
             <div className="space-y-4">
               <div>
@@ -297,7 +297,7 @@ const Preview = () => {
           </div>
 
           {/* Tag */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Tag</h3>
             <div className="space-y-4">
               <div>
@@ -337,7 +337,7 @@ const Preview = () => {
           </div>
 
           {/* Progress */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Progress</h3>
             <div className="space-y-6">
               <div className="max-w-md space-y-4">
@@ -379,7 +379,7 @@ const Preview = () => {
           </div>
 
           {/* Avatar */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Avatar</h3>
             <div className="space-y-6">
               <div>
@@ -428,7 +428,7 @@ const Preview = () => {
           </div>
 
           {/* Icon */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Icon</h3>
             <div className="space-y-6">
               <div>
@@ -502,7 +502,7 @@ const Preview = () => {
           </div>
 
           {/* Skeleton */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Skeleton</h3>
             <div className="space-y-4 max-w-md">
               <Skeleton width="100%" height="20px" />
@@ -513,7 +513,7 @@ const Preview = () => {
           </div>
 
           {/* Spinner */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Spinner</h3>
             <div className="flex items-center gap-4">
               <Spinner size="sm" />
@@ -523,7 +523,7 @@ const Preview = () => {
           </div>
 
           {/* Divider */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Divider</h3>
             <div className="space-y-4">
               <div>
@@ -539,7 +539,7 @@ const Preview = () => {
           </div>
 
           {/* Chip */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Chip</h3>
             <div className="flex flex-wrap gap-2">
               <Chip label="Default" />
@@ -551,7 +551,7 @@ const Preview = () => {
           </div>
 
           {/* KBD */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">KBD</h3>
             <div className="flex items-center gap-2 flex-wrap">
               <p className="text-foreground">Press</p>
@@ -565,10 +565,10 @@ const Preview = () => {
 
         {/* MOLECULES SECTION */}
         <section>
-          <h2 className="text-3xl font-bold mb-6 text-foreground">Molecules</h2>
+          <h2 className="text-3xl font-bold mb-8 text-foreground">Molecules</h2>
 
           {/* FormField */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">FormField</h3>
             <div className="max-w-md space-y-4">
               <div>
@@ -647,7 +647,7 @@ const Preview = () => {
           </div>
 
           {/* Card */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Card</h3>
             <div className="space-y-6">
               <div>
@@ -795,7 +795,7 @@ const Preview = () => {
           </div>
 
           {/* Dropdown */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Dropdown</h3>
             <div className="flex gap-4">
               <Dropdown
@@ -830,7 +830,7 @@ const Preview = () => {
           </div>
 
           {/* InputGroup */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">InputGroup</h3>
             <div className="max-w-md space-y-4">
               <InputGroup leftAddon={
@@ -848,138 +848,160 @@ const Preview = () => {
                 <Input placeholder="0.00" />
               </InputGroup>
               
-              <InputGroup rightAddon={<Button size="sm">Send</Button>}>
-                <Input placeholder="Enter message..." />
+              <InputGroup rightAddon={<span className="text-sm">.com</span>}>
+                <Input placeholder="yourwebsite" />
               </InputGroup>
               
               <InputGroup 
                 leftAddon={<span className="font-medium">https://</span>}
-                rightAddon={<span className="text-muted-foreground">.com</span>}
+                rightAddon={<Icon size={18}><CheckCircle className="w-full h-full text-success" /></Icon>}
               >
-                <Input placeholder="yoursite" />
+                <Input placeholder="example.com" />
               </InputGroup>
             </div>
           </div>
 
           {/* Alert */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Alert</h3>
-            <div className="space-y-4">
-              <Alert 
+            <div className="space-y-4 max-w-2xl">
+              <Alert
                 variant="info"
                 title="Information"
-                description="This is an informational alert message."
-                icon={<Icon size={20}><Info className="w-full h-full" /></Icon>}
+                description="This is an informational alert with additional context."
+                icon={
+                  <Icon size={20}>
+                    <Info className="w-full h-full" />
+                  </Icon>
+                }
               />
-              <Alert 
+              
+              <Alert
                 variant="success"
                 title="Success"
-                description="Operation completed successfully!"
-                icon={<Icon size={20}><CheckCircle className="w-full h-full" /></Icon>}
-              />
-              <Alert 
-                variant="warning"
-                title="Warning"
-                description="Please review your information."
-                icon={<Icon size={20}><AlertTriangle className="w-full h-full" /></Icon>}
-              />
-              <Alert 
-                variant="danger"
-                title="Error"
-                description="An error occurred. Please try again."
-                icon={<Icon size={20}><XCircle className="w-full h-full" /></Icon>}
+                description="Your changes have been saved successfully."
+                icon={
+                  <Icon size={20}>
+                    <CheckCircle className="w-full h-full" />
+                  </Icon>
+                }
                 closable
                 onClose={() => console.log('Alert closed')}
+              />
+              
+              <Alert
+                variant="warning"
+                title="Warning"
+                description="Please review your settings before proceeding."
+                icon={
+                  <Icon size={20}>
+                    <AlertTriangle className="w-full h-full" />
+                  </Icon>
+                }
+              />
+              
+              <Alert
+                variant="danger"
+                title="Error"
+                description="An error occurred while processing your request."
+                icon={
+                  <Icon size={20}>
+                    <XCircle className="w-full h-full" />
+                  </Icon>
+                }
+                closable
+                onClose={() => console.log('Error alert closed')}
+              />
+              
+              <Alert
+                variant="info"
+                description="Simple alert without title or icon."
               />
             </div>
           </div>
 
           {/* Breadcrumbs */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Breadcrumbs</h3>
             <div className="space-y-4">
-              {/* Default separator */}
-              <Breadcrumbs
-                items={[
-                  { label: 'Home', href: '/' },
-                  { label: 'Products', href: '/products' },
-                  { label: 'Category', href: '/products/category' },
-                  { label: 'Item Details' },
-                ]}
-              />
+              <div>
+                <p className="text-sm mb-2 text-muted-foreground">Basic breadcrumbs</p>
+                <Breadcrumbs
+                  items={[
+                    { label: 'Home', href: '#home' },
+                    { label: 'Products', href: '#products' },
+                    { label: 'Electronics', href: '#electronics' },
+                    { label: 'Laptop' }
+                  ]}
+                />
+              </div>
               
-              {/* Custom separator with slash */}
-              <Breadcrumbs
-                items={[
-                  { label: 'Dashboard', href: '/dashboard' },
-                  { label: 'Settings', href: '/settings' },
-                  { label: 'Profile' },
-                ]}
-                separator={<span>/</span>}
-              />
+              <div>
+                <p className="text-sm mb-2 text-muted-foreground">Short breadcrumbs</p>
+                <Breadcrumbs
+                  items={[
+                    { label: 'Dashboard', href: '#dashboard' },
+                    { label: 'Settings' }
+                  ]}
+                />
+              </div>
               
-              {/* Item without href (plain text) */}
-              <Breadcrumbs
-                items={[
-                  { label: 'Home', href: '/' },
-                  { label: 'About' },
-                ]}
-              />
+              <div>
+                <p className="text-sm mb-2 text-muted-foreground">Current page only</p>
+                <Breadcrumbs
+                  items={[
+                    { label: 'Current Page' }
+                  ]}
+                />
+              </div>
             </div>
           </div>
 
           {/* Tabs */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Tabs</h3>
             <div className="space-y-6">
-              {/* Default tabs */}
               <div>
+                <p className="text-sm mb-3 text-muted-foreground">Default Tabs</p>
                 <Tabs
                   tabs={[
                     { label: 'Overview', value: 'overview' },
-                    { label: 'Details', value: 'details' },
+                    { label: 'Analytics', value: 'analytics' },
+                    { label: 'Reports', value: 'reports' },
                     { label: 'Settings', value: 'settings' },
                   ]}
                   value={activeTab}
                   onChange={setActiveTab}
                 />
-                <div className="mt-4 p-4 bg-muted rounded-lg">
-                  <p className="text-foreground">
-                    {activeTab === 'overview' && 'Overview content goes here.'}
-                    {activeTab === 'details' && 'Details content goes here.'}
-                    {activeTab === 'settings' && 'Settings content goes here.'}
-                  </p>
+                <div className="mt-4 p-4 bg-muted/50 rounded-md">
+                  <p className="text-sm text-foreground">Active tab content: {activeTab}</p>
                 </div>
               </div>
               
-              {/* Full width tabs */}
               <div>
+                <p className="text-sm mb-3 text-muted-foreground">Full Width Tabs</p>
                 <Tabs
                   tabs={[
                     { label: 'Profile', value: 'profile' },
                     { label: 'Account', value: 'account' },
-                    { label: 'Security', value: 'security' },
+                    { label: 'Notifications', value: 'notifications' },
                   ]}
                   value={activeTab2}
                   onChange={setActiveTab2}
                   fullWidth
                 />
-                <div className="mt-4 p-4 bg-muted rounded-lg">
-                  <p className="text-foreground">
-                    {activeTab2 === 'profile' && 'Profile content here.'}
-                    {activeTab2 === 'account' && 'Account settings here.'}
-                    {activeTab2 === 'security' && 'Security options here.'}
-                  </p>
+                <div className="mt-4 p-4 bg-muted/50 rounded-md">
+                  <p className="text-sm text-foreground">Active tab: {activeTab2}</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Accordion */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Accordion</h3>
-            <div className="space-y-6">
-              {/* Single mode (default) */}
+            <div className="space-y-6 max-w-2xl">
+              {/* Single mode (only one open at a time) */}
               <div>
                 <p className="text-sm text-muted-foreground mb-3">Single mode (only one open at a time)</p>
                 <Accordion
@@ -987,17 +1009,17 @@ const Preview = () => {
                     {
                       id: 'item1',
                       title: 'What is this component library?',
-                      content: 'This is a React component library built with TypeScript and Tailwind CSS.',
+                      content: 'This is a comprehensive design system built with React, TypeScript, and Tailwind CSS. It provides a collection of reusable components following atomic design principles.',
                     },
                     {
                       id: 'item2',
                       title: 'How do I use these components?',
-                      content: 'Import the components from the library and use them in your React application.',
+                      content: 'Simply import the components you need from the library and use them in your React application. All components are fully typed with TypeScript and documented.',
                     },
                     {
                       id: 'item3',
-                      title: 'Can I customize the styles?',
-                      content: 'Yes, all components support custom styling through className props.',
+                      title: 'Can I customize the styling?',
+                      content: 'Yes! All components use design tokens defined in the tokens folder. You can customize colors, spacing, typography, and more by modifying these tokens.',
                     },
                   ]}
                   defaultOpen={['item1']}
@@ -1033,7 +1055,7 @@ const Preview = () => {
           </div>
 
           {/* SearchBar */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">SearchBar</h3>
             <div className="space-y-4 max-w-md">
               {/* Default SearchBar with clear button */}
@@ -1069,10 +1091,10 @@ const Preview = () => {
 
         {/* ORGANISMS SECTION */}
         <section>
-          <h2 className="text-3xl font-bold mb-6 text-foreground">Organisms</h2>
+          <h2 className="text-3xl font-bold mb-8 text-foreground">Organisms</h2>
 
           {/* Navbar */}
-          <div className="mb-8">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Navbar</h3>
             <div className="space-y-6">
               {/* Default navbar with links */}
@@ -1126,7 +1148,7 @@ const Preview = () => {
           </div>
 
           {/* Header */}
-          <div className="mb-8">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Header</h3>
             <Header>
               <div className="flex items-center justify-between w-full">
@@ -1137,7 +1159,7 @@ const Preview = () => {
           </div>
 
           {/* Sidebar */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Sidebar</h3>
             
             {/* Expanded Sidebar */}
@@ -1237,7 +1259,7 @@ const Preview = () => {
           </div>
 
           {/* Footer */}
-          <div className="mb-8">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Footer</h3>
             <Footer>
               <div className="flex justify-between items-center w-full">
@@ -1257,7 +1279,7 @@ const Preview = () => {
           </div>
 
           {/* Toolbar */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Toolbar</h3>
             <Toolbar>
               <Button size="sm" variant="ghost">Bold</Button>
@@ -1269,7 +1291,7 @@ const Preview = () => {
           </div>
 
           {/* ListItem */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">ListItem</h3>
             <div className="space-y-2 max-w-md">
               <ListItem 
@@ -1332,7 +1354,7 @@ const Preview = () => {
           </div>
 
           {/* ListGroup with ListItem */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">ListGroup & ListItem</h3>
             <ListGroup>
               <ListItem 
@@ -1382,7 +1404,7 @@ const Preview = () => {
           </div>
 
           {/* Modal */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Modal</h3>
             <div className="space-y-4">
               <div>
@@ -1436,16 +1458,16 @@ const Preview = () => {
           </div>
 
           {/* Drawer */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Drawer (Offcanvas)</h3>
             <div className="space-y-4">
               <div>
-                <p className="text-sm mb-4 text-muted-foreground">Drawer from different positions</p>
-                <div className="flex flex-wrap gap-2">
+                <p className="text-sm mb-4 text-muted-foreground">Drawer Positions</p>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <Button 
                     size="sm" 
                     onClick={() => {
-                      setDrawerPosition("right");
+                      setDrawerPosition('right');
                       setDrawerOpen(true);
                     }}
                   >
@@ -1453,9 +1475,8 @@ const Preview = () => {
                   </Button>
                   <Button 
                     size="sm" 
-                    variant="secondary"
                     onClick={() => {
-                      setDrawerPosition("left");
+                      setDrawerPosition('left');
                       setDrawerOpen(true);
                     }}
                   >
@@ -1463,9 +1484,8 @@ const Preview = () => {
                   </Button>
                   <Button 
                     size="sm" 
-                    variant="ghost"
                     onClick={() => {
-                      setDrawerPosition("top");
+                      setDrawerPosition('top');
                       setDrawerOpen(true);
                     }}
                   >
@@ -1473,55 +1493,47 @@ const Preview = () => {
                   </Button>
                   <Button 
                     size="sm" 
-                    variant="ghost"
                     onClick={() => {
-                      setDrawerPosition("bottom");
+                      setDrawerPosition('bottom');
                       setDrawerOpen(true);
                     }}
                   >
                     Bottom Drawer
                   </Button>
                 </div>
-
+                
                 <Drawer
                   open={drawerOpen}
                   onClose={() => setDrawerOpen(false)}
-                  title="Example Drawer"
                   position={drawerPosition}
-                  size="md"
+                  title="Drawer Title"
                   footer={
-                    <>
+                    <div className="flex gap-2">
                       <Button variant="ghost" size="md" onClick={() => setDrawerOpen(false)}>
                         Cancel
                       </Button>
                       <Button variant="primary" size="md" onClick={() => {
-                        console.log('Action confirmed');
+                        console.log('Confirmed');
                         setDrawerOpen(false);
                       }}>
-                        Save Changes
+                        Save
                       </Button>
-                    </>
+                    </div>
                   }
                 >
                   <div className="space-y-4">
                     <p className="text-foreground">
-                      This is a drawer component that slides in from the {drawerPosition} side of the screen.
+                      This drawer slides in from the {drawerPosition}. You can put any content here including forms, lists, or other components.
                     </p>
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-foreground">Features:</h4>
-                      <ul className="list-disc list-inside text-muted-foreground space-y-1">
-                        <li>Slides from left, right, top, or bottom</li>
-                        <li>Click outside to close</li>
-                        <li>Press Escape to dismiss</li>
-                        <li>Responsive sizes (sm, md, lg)</li>
-                        <li>Optional header and footer</li>
-                      </ul>
-                    </div>
-                    <div className="p-4 bg-muted rounded-lg">
-                      <p className="text-sm text-muted-foreground">
-                        You can put any content here, including forms, navigation items, or settings.
-                      </p>
-                    </div>
+                    <FormField id="drawer-name" label="Name">
+                      <Input placeholder="Enter your name" />
+                    </FormField>
+                    <FormField id="drawer-email" label="Email">
+                      <Input placeholder="Enter your email" />
+                    </FormField>
+                    <p className="text-sm text-muted-foreground">
+                      Click outside, press Escape, or click the close button to dismiss.
+                    </p>
                   </div>
                 </Drawer>
               </div>
@@ -1529,11 +1541,11 @@ const Preview = () => {
           </div>
 
           {/* Table */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Table</h3>
             <div className="space-y-6">
               <div>
-                <p className="text-sm mb-4 text-muted-foreground">Basic Table with Data</p>
+                <p className="text-sm mb-3 text-muted-foreground">Basic Table</p>
                 <Table
                   columns={[
                     { key: 'name', label: 'Name' },
@@ -1543,22 +1555,20 @@ const Preview = () => {
                   ]}
                   data={[
                     { name: 'John Doe', email: 'john@example.com', role: 'Admin', status: 'Active' },
-                    { name: 'Jane Smith', email: 'jane@example.com', role: 'Editor', status: 'Active' },
-                    { name: 'Bob Johnson', email: 'bob@example.com', role: 'Viewer', status: 'Inactive' },
+                    { name: 'Jane Smith', email: 'jane@example.com', role: 'User', status: 'Active' },
+                    { name: 'Bob Johnson', email: 'bob@example.com', role: 'User', status: 'Inactive' },
                     { name: 'Alice Williams', email: 'alice@example.com', role: 'Editor', status: 'Active' },
-                    { name: 'Charlie Brown', email: 'charlie@example.com', role: 'Viewer', status: 'Active' },
                   ]}
                 />
               </div>
 
               <div>
-                <p className="text-sm mb-4 text-muted-foreground">Empty Table State</p>
+                <p className="text-sm mb-3 text-muted-foreground">Empty Table</p>
                 <Table
                   columns={[
                     { key: 'id', label: 'ID' },
-                    { key: 'product', label: 'Product' },
+                    { key: 'name', label: 'Product' },
                     { key: 'price', label: 'Price' },
-                    { key: 'quantity', label: 'Quantity' },
                   ]}
                   data={[]}
                   emptyMessage="No products found. Add your first product to get started."
@@ -1566,18 +1576,21 @@ const Preview = () => {
               </div>
 
               <div>
-                <p className="text-sm mb-4 text-muted-foreground">Table with Different Data</p>
+                <p className="text-sm mb-3 text-muted-foreground">Wide Table with More Columns</p>
                 <Table
                   columns={[
-                    { key: 'id', label: 'Order ID' },
-                    { key: 'customer', label: 'Customer' },
-                    { key: 'total', label: 'Total' },
-                    { key: 'date', label: 'Date' },
+                    { key: 'id', label: 'ID' },
+                    { key: 'product', label: 'Product' },
+                    { key: 'category', label: 'Category' },
+                    { key: 'price', label: 'Price' },
+                    { key: 'stock', label: 'Stock' },
+                    { key: 'sales', label: 'Sales' },
                   ]}
                   data={[
-                    { id: '#1001', customer: 'Sarah Connor', total: '$299.99', date: '2024-01-15' },
-                    { id: '#1002', customer: 'Kyle Reese', total: '$149.50', date: '2024-01-16' },
-                    { id: '#1003', customer: 'John Connor', total: '$499.00', date: '2024-01-17' },
+                    { id: '1', product: 'Laptop Pro', category: 'Electronics', price: '$1,299', stock: '45', sales: '234' },
+                    { id: '2', product: 'Wireless Mouse', category: 'Accessories', price: '$29', stock: '156', sales: '567' },
+                    { id: '3', product: 'Mechanical Keyboard', category: 'Accessories', price: '$89', stock: '78', sales: '123' },
+                    { id: '4', product: 'Monitor 4K', category: 'Electronics', price: '$499', stock: '23', sales: '89' },
                   ]}
                 />
               </div>
@@ -1585,14 +1598,14 @@ const Preview = () => {
           </div>
 
           {/* Pagination */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Pagination</h3>
             <div className="space-y-8">
               <div>
-                <p className="text-sm mb-4 text-muted-foreground">Normal Pagination (page 2 of 5)</p>
+                <p className="text-sm mb-4 text-muted-foreground">Middle Page</p>
                 <Pagination
                   page={currentPage1}
-                  totalPages={5}
+                  totalPages={10}
                   onChange={setCurrentPage1}
                 />
                 <p className="text-xs text-center mt-2 text-muted-foreground">
@@ -1636,7 +1649,7 @@ const Preview = () => {
           </div>
 
           {/* CardList */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">CardList</h3>
             <div className="space-y-8">
               <div>
@@ -1792,7 +1805,7 @@ const Preview = () => {
           </div>
 
           {/* KpiCard */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">KpiCard (StatCard)</h3>
             <div className="space-y-6">
               <div>
@@ -1951,7 +1964,7 @@ const Preview = () => {
           </div>
 
           {/* EmptyState (Organisms) */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">EmptyState (Organisms)</h3>
             <div className="space-y-8">
               <div>
@@ -2026,7 +2039,7 @@ const Preview = () => {
           </div>
 
           {/* UserMenu */}
-          <div className="mb-8 p-6 bg-muted/50 rounded-lg border border-border">
+          <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">UserMenu</h3>
             <div className="space-y-8">
               <div>
