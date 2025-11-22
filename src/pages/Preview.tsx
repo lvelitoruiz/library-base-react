@@ -49,6 +49,7 @@ import {
   CardList,
   KpiCard,
   EmptyStateOrg,
+  UserMenu,
 } from '@/components';
 
 const Preview = () => {
@@ -2091,6 +2092,147 @@ const Preview = () => {
                         </Button>
                       </div>
                     }
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* UserMenu */}
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">UserMenu</h3>
+            <div className="space-y-8">
+              <div>
+                <p className="text-sm mb-4 text-muted-foreground">User Menu with Avatar and Options</p>
+                <div className="flex justify-end">
+                  <UserMenu
+                    user={{
+                      name: "John Doe",
+                      email: "john.doe@example.com",
+                      avatarSrc: "https://i.pravatar.cc/150?img=12"
+                    }}
+                    items={[
+                      {
+                        label: "Profile",
+                        value: "profile",
+                        icon: (
+                          <Icon size={18}>
+                            <User className="w-full h-full" />
+                          </Icon>
+                        )
+                      },
+                      {
+                        label: "Settings",
+                        value: "settings",
+                        icon: (
+                          <Icon size={18}>
+                            <Settings className="w-full h-full" />
+                          </Icon>
+                        )
+                      },
+                      {
+                        label: "Logout",
+                        value: "logout",
+                        icon: (
+                          <Icon size={18}>
+                            <LogOut className="w-full h-full" />
+                          </Icon>
+                        )
+                      }
+                    ]}
+                    onSelect={(value) => console.log('Selected:', value)}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <p className="text-sm mb-4 text-muted-foreground">User Menu without Email</p>
+                <div className="flex justify-end">
+                  <UserMenu
+                    user={{
+                      name: "Jane Smith"
+                    }}
+                    items={[
+                      {
+                        label: "My Account",
+                        value: "account",
+                        icon: (
+                          <Icon size={18}>
+                            <User className="w-full h-full" />
+                          </Icon>
+                        )
+                      },
+                      {
+                        label: "Help & Support",
+                        value: "help",
+                        icon: (
+                          <Icon size={18}>
+                            <Info className="w-full h-full" />
+                          </Icon>
+                        )
+                      },
+                      {
+                        label: "Sign Out",
+                        value: "signout",
+                        icon: (
+                          <Icon size={18}>
+                            <LogOut className="w-full h-full" />
+                          </Icon>
+                        )
+                      }
+                    ]}
+                    onSelect={(value) => console.log('Selected:', value)}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <p className="text-sm mb-4 text-muted-foreground">User Menu with Fallback Avatar</p>
+                <div className="flex justify-end">
+                  <UserMenu
+                    user={{
+                      name: "Robert Johnson",
+                      email: "robert.j@company.com"
+                    }}
+                    items={[
+                      {
+                        label: "Dashboard",
+                        value: "dashboard",
+                        icon: (
+                          <Icon size={18}>
+                            <Home className="w-full h-full" />
+                          </Icon>
+                        )
+                      },
+                      {
+                        label: "Notifications",
+                        value: "notifications",
+                        icon: (
+                          <Icon size={18}>
+                            <Bell className="w-full h-full" />
+                          </Icon>
+                        )
+                      },
+                      {
+                        label: "Preferences",
+                        value: "preferences",
+                        icon: (
+                          <Icon size={18}>
+                            <Settings className="w-full h-full" />
+                          </Icon>
+                        )
+                      },
+                      {
+                        label: "Logout",
+                        value: "logout",
+                        icon: (
+                          <Icon size={18}>
+                            <LogOut className="w-full h-full" />
+                          </Icon>
+                        )
+                      }
+                    ]}
+                    onSelect={(value) => console.log('Selected:', value)}
                   />
                 </div>
               </div>
