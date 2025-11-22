@@ -8,7 +8,7 @@ export const Skeleton: React.FC<SkeletonProps> = ({
   variant = 'rectangular',
   ...props 
 }) => {
-  const baseClasses = 'animate-pulse bg-muted/70 rounded-md';
+  const baseClasses = 'animate-pulse bg-muted rounded-md';
   
   const variantClasses = {
     rectangular: 'rounded-md',
