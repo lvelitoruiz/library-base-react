@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Heart, Star, Settings, User, Bell, Home, Info, CheckCircle, AlertTriangle, XCircle, Folder, Users, LogOut } from 'lucide-react';
+import { Heart, Star, Settings, User, Bell, Home, Info, CheckCircle, AlertTriangle, XCircle, Folder, Users, LogOut, TrendingUp, DollarSign, ShoppingCart, Activity } from 'lucide-react';
 import {
   // Atoms
   Button,
@@ -47,6 +47,7 @@ import {
   Table,
   Pagination,
   CardList,
+  KpiCard,
 } from '@/components';
 
 const Preview = () => {
@@ -1857,6 +1858,165 @@ const Preview = () => {
                     </Card>,
                   ]}
                 />
+              </div>
+            </div>
+          </div>
+
+          {/* KpiCard */}
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">KpiCard (StatCard)</h3>
+            <div className="space-y-6">
+              <div>
+                <p className="text-sm mb-4 text-muted-foreground">Upward Trends</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <KpiCard
+                    label="Total Revenue"
+                    value="$45,231"
+                    icon={
+                      <Icon size={24}>
+                        <DollarSign className="w-full h-full" />
+                      </Icon>
+                    }
+                    trend="up"
+                    trendValue="+12.5%"
+                  />
+                  <KpiCard
+                    label="New Users"
+                    value="1,234"
+                    icon={
+                      <Icon size={24}>
+                        <Users className="w-full h-full" />
+                      </Icon>
+                    }
+                    trend="up"
+                    trendValue="+8.2%"
+                  />
+                  <KpiCard
+                    label="Total Sales"
+                    value="892"
+                    icon={
+                      <Icon size={24}>
+                        <ShoppingCart className="w-full h-full" />
+                      </Icon>
+                    }
+                    trend="up"
+                    trendValue="+23.1%"
+                  />
+                  <KpiCard
+                    label="Active Sessions"
+                    value="573"
+                    icon={
+                      <Icon size={24}>
+                        <Activity className="w-full h-full" />
+                      </Icon>
+                    }
+                    trend="up"
+                    trendValue="+5.4%"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <p className="text-sm mb-4 text-muted-foreground">Downward Trends</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <KpiCard
+                    label="Bounce Rate"
+                    value="32.8%"
+                    icon={
+                      <Icon size={24}>
+                        <TrendingUp className="w-full h-full" />
+                      </Icon>
+                    }
+                    trend="down"
+                    trendValue="-4.2%"
+                  />
+                  <KpiCard
+                    label="Support Tickets"
+                    value="45"
+                    icon={
+                      <Icon size={24}>
+                        <Bell className="w-full h-full" />
+                      </Icon>
+                    }
+                    trend="down"
+                    trendValue="-12.3%"
+                  />
+                  <KpiCard
+                    label="Page Load Time"
+                    value="2.4s"
+                    icon={
+                      <Icon size={24}>
+                        <Activity className="w-full h-full" />
+                      </Icon>
+                    }
+                    trend="down"
+                    trendValue="-0.3s"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <p className="text-sm mb-4 text-muted-foreground">Neutral / No Change</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <KpiCard
+                    label="Avg. Order Value"
+                    value="$156.20"
+                    icon={
+                      <Icon size={24}>
+                        <DollarSign className="w-full h-full" />
+                      </Icon>
+                    }
+                    trend="neutral"
+                    trendValue="0.0%"
+                  />
+                  <KpiCard
+                    label="Conversion Rate"
+                    value="3.2%"
+                    trend="neutral"
+                    trendValue="No change"
+                  />
+                  <KpiCard
+                    label="Total Products"
+                    value="1,245"
+                    icon={
+                      <Icon size={24}>
+                        <ShoppingCart className="w-full h-full" />
+                      </Icon>
+                    }
+                  />
+                </div>
+              </div>
+
+              <div>
+                <p className="text-sm mb-4 text-muted-foreground">Without Trend Values</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <KpiCard
+                    label="Total Views"
+                    value="45.2K"
+                    icon={
+                      <Icon size={24}>
+                        <Star className="w-full h-full" />
+                      </Icon>
+                    }
+                  />
+                  <KpiCard
+                    label="Total Likes"
+                    value="12.8K"
+                    icon={
+                      <Icon size={24}>
+                        <Heart className="w-full h-full" />
+                      </Icon>
+                    }
+                  />
+                  <KpiCard
+                    label="Comments"
+                    value="3,456"
+                  />
+                  <KpiCard
+                    label="Shares"
+                    value="892"
+                  />
+                </div>
               </div>
             </div>
           </div>

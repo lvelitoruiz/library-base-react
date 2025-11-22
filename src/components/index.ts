@@ -129,3 +129,6 @@ export type { PaginationProps } from './organisms/Pagination';
 
 export { CardList } from './organisms/CardList';
 export type { CardListProps } from './organisms/CardList';
+
+export { KpiCard } from './organisms/KpiCard';
+export type { KpiCardProps } from './organisms/KpiCard';
