@@ -44,6 +44,7 @@ import {
   ListGroup,
   Modal,
   Drawer,
+  Table,
 } from '@/components';
 
 const Preview = () => {
@@ -1588,6 +1589,62 @@ const Preview = () => {
                     </div>
                   </div>
                 </Drawer>
+              </div>
+            </div>
+          </div>
+
+          {/* Table */}
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Table</h3>
+            <div className="space-y-6">
+              <div>
+                <p className="text-sm mb-4 text-muted-foreground">Basic Table with Data</p>
+                <Table
+                  columns={[
+                    { key: 'name', label: 'Name' },
+                    { key: 'email', label: 'Email' },
+                    { key: 'role', label: 'Role' },
+                    { key: 'status', label: 'Status' },
+                  ]}
+                  data={[
+                    { name: 'John Doe', email: 'john@example.com', role: 'Admin', status: 'Active' },
+                    { name: 'Jane Smith', email: 'jane@example.com', role: 'Editor', status: 'Active' },
+                    { name: 'Bob Johnson', email: 'bob@example.com', role: 'Viewer', status: 'Inactive' },
+                    { name: 'Alice Williams', email: 'alice@example.com', role: 'Editor', status: 'Active' },
+                    { name: 'Charlie Brown', email: 'charlie@example.com', role: 'Viewer', status: 'Active' },
+                  ]}
+                />
+              </div>
+
+              <div>
+                <p className="text-sm mb-4 text-muted-foreground">Empty Table State</p>
+                <Table
+                  columns={[
+                    { key: 'id', label: 'ID' },
+                    { key: 'product', label: 'Product' },
+                    { key: 'price', label: 'Price' },
+                    { key: 'quantity', label: 'Quantity' },
+                  ]}
+                  data={[]}
+                  emptyMessage="No products found. Add your first product to get started."
+                />
+              </div>
+
+              <div>
+                <p className="text-sm mb-4 text-muted-foreground">Table with Different Data</p>
+                <Table
+                  columns={[
+                    { key: 'id', label: 'Order ID' },
+                    { key: 'customer', label: 'Customer' },
+                    { key: 'total', label: 'Total' },
+                    { key: 'date', label: 'Date' },
+                  ]}
+                  data={[
+                    { id: '#1001', customer: 'Sarah Connor', total: '$299.99', date: '2024-01-15' },
+                    { id: '#1002', customer: 'Kyle Reese', total: '$149.50', date: '2024-01-16' },
+                    { id: '#1003', customer: 'John Connor', total: '$499.00', date: '2024-01-17' },
+                  ]}
+                />
               </div>
             </div>
           </div>

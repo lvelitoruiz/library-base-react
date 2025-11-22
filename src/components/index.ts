@@ -120,3 +120,6 @@ export type { ModalProps } from './organisms/Modal';
 
 export { Drawer } from './organisms/Drawer';
 export type { DrawerProps } from './organisms/Drawer';
+
+export { Table } from './organisms/Table';
+export type { TableProps, TableColumn } from './organisms/Table';
