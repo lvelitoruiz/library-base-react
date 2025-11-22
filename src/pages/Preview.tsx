@@ -42,6 +42,7 @@ import {
   Footer,
   Toolbar,
   ListGroup,
+  Modal,
 } from '@/components';
 
 const Preview = () => {
@@ -59,6 +60,7 @@ const Preview = () => {
   const [switch2, setSwitch2] = useState(true);
   const [switch3, setSwitch3] = useState(false);
   const [searchValue, setSearchValue] = useState('');
+  const [modalOpen, setModalOpen] = useState(false);
 
   const toggleTheme = () => {
     const newTheme = !isDark;
@@ -1438,6 +1440,60 @@ const Preview = () => {
                 onClick={() => console.log('Settings')}
               />
             </ListGroup>
+          </div>
+
+          {/* Modal */}
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Modal</h3>
+            <div className="space-y-4">
+              <div>
+                <p className="text-sm mb-4 text-muted-foreground">Basic Modal</p>
+                <Button onClick={() => setModalOpen(true)}>Open Modal</Button>
+                
+                <Modal
+                  open={modalOpen}
+                  onClose={() => setModalOpen(false)}
+                  title="Example Modal"
+                  footer={
+                    <>
+                      <Button variant="ghost" size="md" onClick={() => setModalOpen(false)}>
+                        Cancel
+                      </Button>
+                      <Button variant="primary" size="md" onClick={() => {
+                        console.log('Confirmed');
+                        setModalOpen(false);
+                      }}>
+                        Confirm
+                      </Button>
+                    </>
+                  }
+                >
+                  <div className="space-y-4">
+                    <p className="text-foreground">
+                      This is a simple modal example. You can put any content here, including forms, images, or other components.
+                    </p>
+                    <p className="text-muted-foreground">
+                      Click outside the modal, press Escape, or click the close button to dismiss it.
+                    </p>
+                  </div>
+                </Modal>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <p className="text-sm mb-2 text-muted-foreground">Small Modal</p>
+                  <Button size="sm" onClick={() => setModalOpen(true)}>Small</Button>
+                </div>
+                <div>
+                  <p className="text-sm mb-2 text-muted-foreground">Medium Modal (Default)</p>
+                  <Button size="sm" onClick={() => setModalOpen(true)}>Medium</Button>
+                </div>
+                <div>
+                  <p className="text-sm mb-2 text-muted-foreground">Large Modal</p>
+                  <Button size="sm" onClick={() => setModalOpen(true)}>Large</Button>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </div>
