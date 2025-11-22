@@ -117,3 +117,6 @@ export type { ListGroupProps } from './organisms/ListGroup';
 
 export { Modal } from './organisms/Modal';
 export type { ModalProps } from './organisms/Modal';
+
+export { Drawer } from './organisms/Drawer';
+export type { DrawerProps } from './organisms/Drawer';
