@@ -43,6 +43,7 @@ import {
   Toolbar,
   ListGroup,
   Modal,
+  Drawer,
 } from '@/components';
 
 const Preview = () => {
@@ -61,6 +62,8 @@ const Preview = () => {
   const [switch3, setSwitch3] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [drawerPosition, setDrawerPosition] = useState<"left" | "right" | "top" | "bottom">("right");
 
   const toggleTheme = () => {
     const newTheme = !isDark;
@@ -1492,6 +1495,99 @@ const Preview = () => {
                   <p className="text-sm mb-2 text-muted-foreground">Large Modal</p>
                   <Button size="sm" onClick={() => setModalOpen(true)}>Large</Button>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Drawer */}
+          <div className="mb-8 p-6 bg-card rounded-lg border border-border shadow-sm">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Drawer (Offcanvas)</h3>
+            <div className="space-y-4">
+              <div>
+                <p className="text-sm mb-4 text-muted-foreground">Drawer from different positions</p>
+                <div className="flex flex-wrap gap-2">
+                  <Button 
+                    size="sm" 
+                    onClick={() => {
+                      setDrawerPosition("right");
+                      setDrawerOpen(true);
+                    }}
+                  >
+                    Right Drawer
+                  </Button>
+                  <Button 
+                    size="sm" 
+                    variant="secondary"
+                    onClick={() => {
+                      setDrawerPosition("left");
+                      setDrawerOpen(true);
+                    }}
+                  >
+                    Left Drawer
+                  </Button>
+                  <Button 
+                    size="sm" 
+                    variant="ghost"
+                    onClick={() => {
+                      setDrawerPosition("top");
+                      setDrawerOpen(true);
+                    }}
+                  >
+                    Top Drawer
+                  </Button>
+                  <Button 
+                    size="sm" 
+                    variant="ghost"
+                    onClick={() => {
+                      setDrawerPosition("bottom");
+                      setDrawerOpen(true);
+                    }}
+                  >
+                    Bottom Drawer
+                  </Button>
+                </div>
+
+                <Drawer
+                  open={drawerOpen}
+                  onClose={() => setDrawerOpen(false)}
+                  title="Example Drawer"
+                  position={drawerPosition}
+                  size="md"
+                  footer={
+                    <>
+                      <Button variant="ghost" size="md" onClick={() => setDrawerOpen(false)}>
+                        Cancel
+                      </Button>
+                      <Button variant="primary" size="md" onClick={() => {
+                        console.log('Action confirmed');
+                        setDrawerOpen(false);
+                      }}>
+                        Save Changes
+                      </Button>
+                    </>
+                  }
+                >
+                  <div className="space-y-4">
+                    <p className="text-foreground">
+                      This is a drawer component that slides in from the {drawerPosition} side of the screen.
+                    </p>
+                    <div className="space-y-2">
+                      <h4 className="font-semibold text-foreground">Features:</h4>
+                      <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                        <li>Slides from left, right, top, or bottom</li>
+                        <li>Click outside to close</li>
+                        <li>Press Escape to dismiss</li>
+                        <li>Responsive sizes (sm, md, lg)</li>
+                        <li>Optional header and footer</li>
+                      </ul>
+                    </div>
+                    <div className="p-4 bg-muted rounded-lg">
+                      <p className="text-sm text-muted-foreground">
+                        You can put any content here, including forms, navigation items, or settings.
+                      </p>
+                    </div>
+                  </div>
+                </Drawer>
               </div>
             </div>
           </div>
