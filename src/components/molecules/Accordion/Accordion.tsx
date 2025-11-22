@@ -79,7 +79,7 @@ export const Accordion: React.FC<AccordionProps> = ({
                 isOpen ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
               )}
             >
-              <div className="px-4 py-3 text-sm text-[hsl(var(--foreground))] bg-[hsl(var(--muted))]">
+              <div className="px-4 py-3 text-sm text-[hsl(var(--foreground))] bg-muted/30">
                 {item.content}
               </div>
             </div>

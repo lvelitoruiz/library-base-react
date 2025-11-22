@@ -4,6 +4,7 @@ export interface ListItemProps {
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
   clickable?: boolean;
+  active?: boolean;
   onClick?: () => void;
   className?: string;
 }

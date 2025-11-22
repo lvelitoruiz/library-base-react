@@ -43,7 +43,7 @@ export const Progress: React.FC<ProgressProps> = ({
         aria-valuemin={0}
         aria-valuemax={max}
         className={cn(
-          'overflow-hidden rounded-full bg-secondary/20',
+          'overflow-hidden rounded-full bg-muted',
           sizeClasses[size],
           fullWidth && 'w-full'
         )}

@@ -12,6 +12,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
     name,
     id,
     value,
+    inline = false,
     className,
     ...props 
   }, ref) => {
@@ -24,7 +25,8 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
     return (
       <label 
         className={cn(
-          'inline-flex items-center gap-2',
+          inline ? 'inline-flex' : 'flex',
+          'items-center gap-2',
           disabled ? 'cursor-not-allowed' : 'cursor-pointer'
         )}
         htmlFor={radioId}

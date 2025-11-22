@@ -5,4 +5,5 @@ export interface SwitchProps {
   label?: string;
   name?: string;
   id?: string;
+  inline?: boolean;
 }

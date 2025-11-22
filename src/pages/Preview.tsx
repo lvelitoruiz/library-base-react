@@ -181,74 +181,166 @@ const Preview = () => {
           {/* Checkbox */}
           <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Checkbox</h3>
-            <div className="space-y-3">
-              <Checkbox 
-                checked={checkbox1} 
-                onChange={setCheckbox1}
-                label="Accept terms and conditions" 
-              />
-              <Checkbox 
-                checked={checkbox2} 
-                onChange={setCheckbox2}
-                label="Subscribe to newsletter" 
-              />
-              <Checkbox 
-                checked={checkbox3} 
-                onChange={setCheckbox3}
-                label="Disabled checkbox" 
-                disabled 
-              />
+            <div className="space-y-6">
+              <div>
+                <p className="text-sm mb-2 text-muted-foreground">Vertical (default)</p>
+                <div className="space-y-3">
+                  <Checkbox 
+                    checked={checkbox1} 
+                    onChange={setCheckbox1}
+                    label="Accept terms and conditions" 
+                  />
+                  <Checkbox 
+                    checked={checkbox2} 
+                    onChange={setCheckbox2}
+                    label="Subscribe to newsletter" 
+                  />
+                  <Checkbox 
+                    checked={checkbox3} 
+                    onChange={setCheckbox3}
+                    label="Disabled checkbox" 
+                    disabled 
+                  />
+                </div>
+              </div>
+              <div>
+                <p className="text-sm mb-2 text-muted-foreground">Inline</p>
+                <div className="flex gap-4">
+                  <Checkbox 
+                    checked={checkbox1} 
+                    onChange={setCheckbox1}
+                    label="Option 1" 
+                    inline
+                  />
+                  <Checkbox 
+                    checked={checkbox2} 
+                    onChange={setCheckbox2}
+                    label="Option 2" 
+                    inline
+                  />
+                  <Checkbox 
+                    checked={checkbox3} 
+                    onChange={setCheckbox3}
+                    label="Option 3" 
+                    inline
+                    disabled 
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Radio */}
           <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Radio</h3>
-            <div className="space-y-3">
-              <Radio 
-                name="option" 
-                label="Option 1" 
-                value="1" 
-                checked={selectedRadio === '1'}
-                onChange={() => setSelectedRadio('1')}
-              />
-              <Radio 
-                name="option" 
-                label="Option 2" 
-                value="2" 
-                checked={selectedRadio === '2'}
-                onChange={() => setSelectedRadio('2')}
-              />
-              <Radio 
-                name="option" 
-                label="Option 3" 
-                value="3" 
-                checked={selectedRadio === '3'}
-                onChange={() => setSelectedRadio('3')}
-              />
+            <div className="space-y-6">
+              <div>
+                <p className="text-sm mb-2 text-muted-foreground">Vertical (default)</p>
+                <div className="space-y-3">
+                  <Radio 
+                    name="option" 
+                    label="Option 1" 
+                    value="1" 
+                    checked={selectedRadio === '1'}
+                    onChange={() => setSelectedRadio('1')}
+                  />
+                  <Radio 
+                    name="option" 
+                    label="Option 2" 
+                    value="2" 
+                    checked={selectedRadio === '2'}
+                    onChange={() => setSelectedRadio('2')}
+                  />
+                  <Radio 
+                    name="option" 
+                    label="Option 3" 
+                    value="3" 
+                    checked={selectedRadio === '3'}
+                    onChange={() => setSelectedRadio('3')}
+                  />
+                </div>
+              </div>
+              <div>
+                <p className="text-sm mb-2 text-muted-foreground">Inline</p>
+                <div className="flex gap-4">
+                  <Radio 
+                    name="option-inline" 
+                    label="Option 1" 
+                    value="1" 
+                    checked={selectedRadio === '1'}
+                    onChange={() => setSelectedRadio('1')}
+                    inline
+                  />
+                  <Radio 
+                    name="option-inline" 
+                    label="Option 2" 
+                    value="2" 
+                    checked={selectedRadio === '2'}
+                    onChange={() => setSelectedRadio('2')}
+                    inline
+                  />
+                  <Radio 
+                    name="option-inline" 
+                    label="Option 3" 
+                    value="3" 
+                    checked={selectedRadio === '3'}
+                    onChange={() => setSelectedRadio('3')}
+                    inline
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Switch */}
           <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Switch</h3>
-            <div className="space-y-3">
-              <Switch 
-                checked={switch1}
-                onChange={setSwitch1}
-                label="Enable notifications" 
-              />
-              <Switch 
-                checked={switch2}
-                onChange={setSwitch2}
-                label="Dark mode" 
-              />
-              <Switch 
-                checked={switch3}
-                onChange={setSwitch3}
-                label="Disabled" 
-                disabled 
-              />
+            <div className="space-y-6">
+              <div>
+                <p className="text-sm mb-2 text-muted-foreground">Vertical</p>
+                <div className="space-y-3">
+                  <Switch 
+                    checked={switch1}
+                    onChange={setSwitch1}
+                    label="Enable notifications"
+                    inline={false}
+                  />
+                  <Switch 
+                    checked={switch2}
+                    onChange={setSwitch2}
+                    label="Dark mode"
+                    inline={false}
+                  />
+                  <Switch 
+                    checked={switch3}
+                    onChange={setSwitch3}
+                    label="Disabled" 
+                    disabled
+                    inline={false}
+                  />
+                </div>
+              </div>
+              <div>
+                <p className="text-sm mb-2 text-muted-foreground">Inline (default)</p>
+                <div className="flex gap-4">
+                  <Switch 
+                    checked={switch1}
+                    onChange={setSwitch1}
+                    label="Notifications"
+                  />
+                  <Switch 
+                    checked={switch2}
+                    onChange={setSwitch2}
+                    label="Dark mode"
+                  />
+                  <Switch 
+                    checked={switch3}
+                    onChange={setSwitch3}
+                    label="Disabled" 
+                    disabled
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
@@ -1181,7 +1273,8 @@ const Preview = () => {
                     id: 'dashboard',
                     label: 'Dashboard',
                     icon: <Icon size={20}><Home className="w-full h-full" /></Icon>,
-                    href: '#dashboard'
+                    href: '#dashboard',
+                    active: true
                   },
                   {
                     id: 'projects',
@@ -1228,7 +1321,8 @@ const Preview = () => {
                     id: 'dashboard',
                     label: 'Dashboard',
                     icon: <Icon size={20}><Home className="w-full h-full" /></Icon>,
-                    href: '#dashboard'
+                    href: '#dashboard',
+                    active: true
                   },
                   {
                     id: 'projects',
@@ -1379,6 +1473,7 @@ const Preview = () => {
                   </Icon>
                 }
                 clickable
+                active
                 onClick={() => console.log('Profile')}
               />
               <ListItem 

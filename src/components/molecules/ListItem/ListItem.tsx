@@ -8,6 +8,7 @@ export const ListItem: React.FC<ListItemProps> = ({
   leftIcon,
   rightIcon,
   clickable = false,
+  active = false,
   onClick,
   className
 }) => {
@@ -34,12 +35,15 @@ export const ListItem: React.FC<ListItemProps> = ({
         'w-full flex items-center',
         'px-4 py-3',
         'rounded-lg',
-        'bg-[hsl(var(--card))]',
         'transition-all duration-200',
+        active
+          ? 'bg-primary text-primary-foreground'
+          : 'bg-[hsl(var(--card))]',
         clickable && [
           'cursor-pointer',
-          'hover:bg-[hsl(var(--accent))]',
-          'active:bg-[hsl(var(--accent))]',
+          active 
+            ? 'hover:bg-primary/90'
+            : 'hover:bg-muted active:bg-muted/80',
           'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2'
         ],
         !clickable && 'cursor-default',
@@ -53,11 +57,17 @@ export const ListItem: React.FC<ListItemProps> = ({
       )}
       
       <div className="flex-1 flex flex-col gap-y-0.5 min-w-0">
-        <span className="text-sm font-medium text-[hsl(var(--foreground))]">
+        <span className={cn(
+          "text-sm font-medium",
+          active ? "text-primary-foreground" : "text-[hsl(var(--foreground))]"
+        )}>
           {title}
         </span>
         {description && (
-          <span className="text-sm text-[hsl(var(--muted-foreground))]">
+          <span className={cn(
+            "text-sm",
+            active ? "text-primary-foreground/80" : "text-[hsl(var(--muted-foreground))]"
+          )}>
             {description}
           </span>
         )}

@@ -3,7 +3,7 @@ import { SwitchProps } from './types';
 import { cn } from '@/lib/utils';
 
 export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
-  ({ checked, onChange, disabled, label, name, id }, ref) => {
+  ({ checked, onChange, disabled, label, name, id, inline = true }, ref) => {
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       onChange(e.target.checked);
     };
@@ -12,7 +12,8 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
       <label 
         htmlFor={id}
         className={cn(
-          "inline-flex items-center gap-2",
+          inline ? "inline-flex" : "flex",
+          "items-center gap-2",
           disabled ? "cursor-not-allowed opacity-60" : "cursor-pointer"
         )}
       >

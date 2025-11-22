@@ -53,13 +53,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 'flex items-center gap-3',
                 'px-4 py-2.5',
                 'rounded-md',
-                'text-[hsl(var(--foreground))]',
-                'hover:bg-[hsl(var(--accent))]',
                 'transition-colors duration-200',
                 'cursor-pointer',
                 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))]',
                 'text-left',
-                collapsed && 'justify-center'
+                collapsed && 'justify-center',
+                item.active
+                  ? 'bg-primary text-primary-foreground hover:bg-primary/90'
+                  : 'text-[hsl(var(--foreground))] hover:bg-muted'
               )}
             >
               {/* Icon */}

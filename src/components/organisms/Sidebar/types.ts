@@ -3,6 +3,7 @@ export interface SidebarItem {
   label: string;
   icon?: React.ReactNode;
   href?: string;
+  active?: boolean;
 }
 
 export interface SidebarProps {

@@ -7,4 +7,5 @@ export interface RadioProps extends Omit<React.InputHTMLAttributes<HTMLInputElem
   name?: string;
   id?: string;
   value?: string;
+  inline?: boolean;
 }
