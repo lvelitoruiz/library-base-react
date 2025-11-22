@@ -123,3 +123,6 @@ export type { DrawerProps } from './organisms/Drawer';
 
 export { Table } from './organisms/Table';
 export type { TableProps, TableColumn } from './organisms/Table';
+
+export { Pagination } from './organisms/Pagination';
+export type { PaginationProps } from './organisms/Pagination';
